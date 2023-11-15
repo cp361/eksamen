@@ -9,41 +9,26 @@ import {
     Container,
     Group,
     Button,
-    MantineProvider,
-    Grid,
-    GridCol,
+    Center,
   } from '@mantine/core';
 
   import classes from '../styles/AuthenticationTitle.module.css';
   
   export function AuthenticationForm() {
     return (
-      <MantineProvider
-      // theme={{
-      //     colors: {
-      //         grape: ["#FBB040", "#00163B", "#EEBEFA", "#E599F7", "#DA77F2", "#CC5DE8", "#BE4BDB", "#AE3EC9", "#9C36B5", "#862E9C",],
-      //     },
-      // }}
-      // styles={{
-      //     Paper: (theme) => ({
-      //         root: {
-      //             backgroundColor: theme.colors.grape[1]
-      //         }
-      //     })
-      // }}
-      >
-        <Grid justify='center' align='center'>
+            <Container h='{430}' pt={30} className='form-bg'>
+              <Center>
+                <div className='logo'>
+                  <span className='logo-left'></span>
+                  <span className='logo-right'></span>
+                  <span className='logo-top'></span>
+                  <span className='logo-bottom'></span>
+                </div>
+              </Center>
 
-          <GridCol span="auto">
-
-            <h1>Lorte Mantine</h1>
-
-          </GridCol>
-
-
-
-          <GridCol span="auto">
-            <Container size={420}>
+              {/* CPH Business teksten */}
+              <p className='logo-text'><span className='logo-first-text'>cph</span>business</p>
+              
               <Title ta="center" className={classes.title}>
                 Welcome back!
               </Title>
@@ -54,7 +39,7 @@ import {
                 </Anchor>
               </Text>
 
-              <Paper withBorder shadow="md" p={30} mt={30} radius="md">
+              <Paper withBorder shadow="md" p={30} mt={30} radius="md" className='form-border'>
                 <TextInput
                   label="Email"
                   placeholder="you@mantine.dev"
@@ -72,14 +57,10 @@ import {
                     Forgot password?
                   </Anchor>
                 </Group>
-                <Button fullWidth mt="xl">
+                <Button fullWidth mt="xl" className='sign-in' >
                   Sign in
                 </Button>
               </Paper>
             </Container>
-          </GridCol>
-
-        </Grid>
-      </MantineProvider>
     )
   }
