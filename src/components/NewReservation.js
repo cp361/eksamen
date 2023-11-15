@@ -4,6 +4,8 @@ import '@mantine/dates/styles.css';
 import { useState } from 'react';
 import { DatePickerInput } from '@mantine/dates';
 import { useDisclosure } from '@mantine/hooks';
+import 'dayjs/locale/da';
+
 
 
 export function NewReservation() {
@@ -25,24 +27,26 @@ export function NewReservation() {
     >
       
     <DatePickerInput
-      label="Pick date"
-      placeholder="Pick date"
+      label="Vælg dato"
+      placeholder="Vælg dato"
       value={value}
       onChange={setValue}
+      locale='da'
+      excludeDate={(date) => date.getDay() === 0 || date.getDay() === 6}
     />
 
 <>
-      <Modal opened={opened} onClose={close} title="Pick time">
-        <TextInput label="Preffered Start" placeholder="--:--" />
+      <Modal opened={opened} onClose={close} title="Vælg tidsrum">
+        <TextInput label="Ønskede starttidspunkt" placeholder="--:--"/>
         <TextInput
           data-autofocus
-          label="Duration (in hours and min)"
-          placeholder="-- hours -- min"
+          label="Tidsrum (i timer og minutter)"
+          placeholder="-- timer -- minutter"
           mt="md"
         />
       </Modal>
 
-      <Button onClick={open}>Pick time</Button>
+      <Button onClick={open}>Vælg tidsrum</Button>
     </>
 
       <p>3</p>

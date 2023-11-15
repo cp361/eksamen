@@ -30,35 +30,35 @@ import {
               <p className='logo-text'><span className='logo-first-text'>cph</span>business</p>
               
               <Title ta="center" className={classes.title}>
-                Welcome back!
+                Velkommen tilbage!
               </Title>
               <Text c="dimmed" size="sm" ta="center" mt={5}>
                 Do not have an account yet?{" "}
                 <Anchor size="sm" component="button">
-                  Create account
+                  Opret bruger
                 </Anchor>
               </Text>
 
               <Paper withBorder shadow="md" p={30} mt={30} radius="md" className='form-border'>
                 <TextInput
                   label="Email"
-                  placeholder="you@mantine.dev"
+                  placeholder="cph-xxXXX@cphbusiness.dk"
                   required
                 />
                 <PasswordInput
-                  label="Password"
-                  placeholder="Your password"
+                  label="Adgangskode"
+                  placeholder="Din adgangskode"
                   required
                   mt="md"
                 />
                 <Group justify="space-between" mt="lg">
-                  <Checkbox label="Remember me" />
+                  <Checkbox label="Husk mig" />
                   <Anchor component="button" size="sm">
-                    Forgot password?
+                    Glemt adgangskode?
                   </Anchor>
                 </Group>
                 <Button fullWidth mt="xl" className='sign-in' >
-                  Sign in
+                  Log in
                 </Button>
               </Paper>
             </Container>
