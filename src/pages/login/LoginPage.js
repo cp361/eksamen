@@ -2,7 +2,7 @@ import React from 'react'
 import { AuthenticationForm } from '@/components/AuthenticationForm'
 import { Grid, GridCol } from '@mantine/core'
 import Image from 'next/image'
-import sideImg from '../assets/home-background.png'
+import sideImg from '../../assets/home-background.png'
 
 const LoginPage = () => {
   return (
