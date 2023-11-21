@@ -4,7 +4,7 @@ import '@mantine/dates/styles.css';
 import { useState } from 'react';
 import { DatePickerInput } from '@mantine/dates';
 import { useDisclosure } from '@mantine/hooks';
-import 'dayjs/locale/da';
+import 'dayjs/locale/en';
 
 
 
@@ -17,7 +17,7 @@ export function NewReservation() {
   return (
     
     <Container fluid className='nr-container'>
-    <Title className='header-title'>Ny reservation</Title>
+    <Title className='header-title'>New Reservation</Title>
     <Flex className='nr-flex'
       mih={50}
       bg="rgba(0, 0, 0, 0)"
@@ -30,11 +30,11 @@ export function NewReservation() {
       <div className='date-div'>
         <Title className='date-title'>Date</Title>
         <DatePickerInput className='nr-datepicker'
-          label="Vælg dato"
-          placeholder="Vælg dato"
+          label="Choose a date"
+          placeholder="Choose a date"
           value={value}
           onChange={setValue}
-          locale='da'
+          locale='en'
           excludeDate={(date) => date.getDay() === 0 || date.getDay() === 6}
         />
       </div>
@@ -43,25 +43,25 @@ export function NewReservation() {
 <> 
     <div className='modal-div'>
     <Title className='modal-title'>Time</Title>
-      <Modal className='nr-modal' opened={opened} onClose={close} title="Vælg tidsrum">
-        <TextInput label="Ønskede starttidspunkt" placeholder="--:--"/>
+      <Modal className='nr-modal' opened={opened} onClose={close} title="Choose time period">
+        <TextInput label="Preferred start" placeholder="--:--"/>
         <TextInput
           data-autofocus
-          label="Tidsrum (i timer og minutter)"
-          placeholder="-- timer -- minutter"
+          label="Duration (in hours and minutes)"
+          placeholder="-- hours -- minutes"
           mt="md"
         />
         </Modal>
 
-        <Button onClick={open}>Vælg tidsrum</Button>
+        <Button onClick={open}>Choose time period</Button>
       </div>
     </>
 
     <div className='numberinput-div'>
-    <Title className='numberinput-title'>Deltagere</Title>
+    <Title className='numberinput-title'>Attendants</Title>
     <NumberInput className='nr-numberinput'
-      label="Deltagere"
-      placeholder="X"
+      label="Attendants"
+      placeholder="0"
       allowNegative={false}
     />
     
@@ -69,7 +69,7 @@ export function NewReservation() {
      
     </Flex>
     <div className='nr-button-div'>
-      <Button className='nr-button'>NÆSTE</Button>
+      <Button className='nr-button'>NEXT</Button>
     </div>
     
     </Container>

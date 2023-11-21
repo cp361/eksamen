@@ -1,9 +1,7 @@
-import Link from "next/link";
 import { useState } from "react";
 import { supabase } from "../pages/lib/helper/supabaseClient.js"
 import { useRouter } from "next/router"
-import { Center, Grid, GridCol, Title } from '@mantine/core'
-import sideImg from '../assets/home-background.png'
+import { Center, Title } from '@mantine/core'
 import { Container, Anchor, Text, } from "@mantine/core";
 import classes from "../styles/AuthenticationTitle.module.css"
 

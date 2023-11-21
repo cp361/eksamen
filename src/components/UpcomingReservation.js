@@ -18,15 +18,15 @@ export function UpcomingReservation() {
         <Grid className='ur-grid'>
         <Grid.Col className='this-week-grid' span={4}>
           <div className='ur-thisweek-dato'>
-            <p>I morgen</p>
-            <h1>10</h1>
+            <p>Tommorow</p>
+            <h1>10th</h1>
             <p>November</p>
           </div>
           <div>
             <Title order={4} className='ur-thisweek-title'>CL-201</Title>
             <p>Kl. 12:00 - 16:30</p>
-            <p>4 studerende</p>
-            <Button className='ur-button'>Fortryd</Button>
+            <p>4 Students</p>
+            <Button className='ur-button'>Cancel</Button>
           </div>
 
             
@@ -34,28 +34,28 @@ export function UpcomingReservation() {
         </Grid.Col>
         <Grid.Col className='this-week-grid' span={4}>
         <div className='ur-thisweek-dato'>
-            <p>Mandag</p>
-            <h1>13</h1>
+            <p>Monday</p>
+            <h1>13th</h1>
             <p>November</p>
           </div>
           <div>
             <Title order={4} className='ur-thisweek-title'>CL-164</Title>
             <p>Kl. 13:00 - 16:00</p>
-            <p>3 studerende</p>
-            <Button className='ur-button'>Fortryd</Button>
+            <p>3 Students</p>
+            <Button className='ur-button'>Cancel</Button>
           </div>
         </Grid.Col>
         <Grid.Col className='this-week-grid' span={4}>
         <div className='ur-thisweek-dato'>
-            <p>Onsdag</p>
-            <h1>15</h1>
+            <p>Wednesday</p>
+            <h1>15th</h1>
             <p>November</p>
           </div>
           <div>
             <Title order={4} className='ur-thisweek-title'>CL-201</Title>
             <p>Kl. 8:00 - 12:00</p>
-            <p>2 studerende</p>
-            <Button className='ur-button'>Fortryd</Button>
+            <p>2 Students</p>
+            <Button className='ur-button'>Cancel</Button>
           </div>
         </Grid.Col>
         </Grid>

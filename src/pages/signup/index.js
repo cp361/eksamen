@@ -3,6 +3,7 @@ import { useState } from "react";
 import { supabase } from "../lib/helper/supabaseClient"
 import { useRouter } from "next/router"
 import { Grid, GridCol } from '@mantine/core'
+import Image from 'next/image'
 import sideImg from '../../assets/home-background.png'
 import SignUpForm from "@/components/SignUp";
 
@@ -24,8 +25,8 @@ const Signup = () => {
   return (
     <div className="bg">
       <Grid className='grid' align='center'>
-        <GridCol span='auto' h={556.8} w={500} className='img-bg'>
-          <img
+        <GridCol span='auto' h={556.8} w={505.08} className='img-bg'>
+          <Image
             src={sideImg}
             width={500}
             height={556.8}
