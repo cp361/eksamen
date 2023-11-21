@@ -2,6 +2,9 @@ import Link from "next/link";
 import { useState } from "react";
 import { supabase } from "../lib/helper/supabaseClient"
 import { useRouter } from "next/router"
+import { Grid, GridCol } from '@mantine/core'
+import sideImg from '../../assets/home-background.png'
+import SignUpForm from "@/components/SignUp";
 
 const Signup = () => {
   const [email, setEmail] = useState("");
@@ -19,30 +22,25 @@ const Signup = () => {
     }
   };
   return (
-    <div >
-      <div>
-        <span >SignUp</span>
-        <form
-          onSubmit={handleSubmit}
-        >
-          <input
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="email"
-            type="email"
+    <div className="bg">
+      <Grid className='grid' align='center'>
+        <GridCol span='auto' h={556.8} w={500} className='img-bg'>
+          <img
+            src={sideImg}
+            width={500}
+            height={556.8}
+            alt="Login side image"
           />
-          <input
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            placeholder="password"
-            type="password"
-          />
-          <button  type="submit">SignUp</button>
-        </form>
-        <span onClick={() => router.push('/')} >
-          Allerede oprettet en bruger? <span >Login</span>
-        </span>
-      </div>
+        </GridCol>
+
+        <GridCol span='auto'>
+
+        <SignUpForm />
+
+        </GridCol>
+
+      </Grid>
+      
     </div>
   );
 };

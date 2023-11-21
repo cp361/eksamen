@@ -23,6 +23,9 @@ body {
 .__m__-Rmm {
     --grid-gutter: 0!important;
 }
+.m-96bdd299 {
+    padding: 0!important;
+}
 .img-bg {
     background-color: var(--cphYellow);
     padding: 0!important;
@@ -95,7 +98,7 @@ body {
     transition:  0.2s ease;
 }
 
-/** Farve til remember me, når den er krydset af  */
+/*! Farve til remember me, når den er krydset af  */
 .m-bf2d988c {
     --checkbox-color: var(--cphYellow)!important;
 }
@@ -106,7 +109,16 @@ body {
 }
 
 
-/*! Available Times */
+/*
+!=========================================
+!=========================================
+!=========================================
+!=========== Available Times =============
+!=========================================
+!=========================================
+!=========================================
+*/
+
 .m-410352e9 {
     overflow: visible!important;
 }
@@ -266,4 +278,51 @@ body {
 
 .ur-button {
     color: #FBB040;
+}
+
+
+
+
+/*
+!=========================================
+!=========================================
+!=========================================
+!============ Sign Up Page ===============
+!=========================================
+!=========================================
+!=========================================
+*/
+
+.form {
+    display: grid;
+}
+.form label {
+    font-size: 20px;
+    font-weight: 400;
+
+}
+.form input {
+    padding: 10px;
+    border: 1px solid var(--textColor);
+    border-radius: 10px;
+}
+.form :nth-child(3) {
+    margin-top: 10px;
+}
+.form :nth-child(4) {
+    margin-bottom: 10px;
+}
+.form :nth-child(5) {
+    padding: 10px;
+    cursor: pointer;
+    color: white;
+    background-color: var(--cphYellow);
+    border: none;
+    border-radius: 10px;
+    transition: .2s ease-in-out;
+
+    margin-bottom: 10px;
+}
+.form :nth-child(5):hover {
+    background-color: var(--cphYellowHover);
 }

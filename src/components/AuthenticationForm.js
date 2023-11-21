@@ -63,7 +63,7 @@ export function AuthenticationForm() {
           </Title>
           <Text c="dimmed" size="sm" ta="center" mt={5} onClick={() => router.push('/signup')}>
             Har du ikke en bruger endnu?
-            <Anchor size="sm" component="button">
+            <Anchor size="sm" component="button" ml={5}>
               Opret bruger
             </Anchor>
           </Text>
