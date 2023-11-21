@@ -13,7 +13,7 @@ import {
 } from "@mantine/core"
 
 import classes from "../styles/AuthenticationTitle.module.css"
-import { supabase } from "../lib/helper/supabaseClient.js"
+import { supabase } from "../pages/helper/supabaseClient.js"
 import React, { useEffect, useState } from "react"
 import { createClient } from "@supabase/supabase-js"
 import { useFavicon } from "@mantine/hooks"
@@ -61,8 +61,8 @@ export function AuthenticationForm() {
           <Title ta="center" className={classes.title}>
             Velkommen tilbage!
           </Title>
-          <Text c="dimmed" size="sm" ta="center" mt={5}>
-            Har du ikke en bruger endnu?{" "}
+          <Text c="dimmed" size="sm" ta="center" mt={5} onClick={() => router.push('/signup')}>
+            Har du ikke en bruger endnu?
             <Anchor size="sm" component="button">
               Opret bruger
             </Anchor>
@@ -87,9 +87,6 @@ export function AuthenticationForm() {
           />
           <button type="submit">Login</button>
         </form>
-        <span onClick={() => router.push('/signup')} >
-          New to nexlog? <span >SignUp</span>
-        </span>
         </div>
         
       </div>
