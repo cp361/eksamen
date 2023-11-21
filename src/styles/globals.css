@@ -6,6 +6,7 @@
     --cphYellow: #FBB040;
     --cphYellowHover: #e29e38;
     --textColor: #9C9C9C;
+    --textColor2: #676767;
 }
 
 body {
@@ -193,4 +194,76 @@ body {
     grid-column-gap: 10px;
     grid-row-gap: 10px;
     
+}
+
+.nr-container {
+    width: 100%;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.nr-datepicker {
+    padding-top: 80px;
+}
+
+.nr-numberinput {
+    padding-top: 80px;
+}
+
+
+.nr-flex {
+    border: solid #9C9C9C;
+    padding: 10%;
+}
+
+.modal-title {
+    padding-bottom: 105px;
+    color: #676767;
+}
+
+.header-title {
+    padding-bottom: 20px;
+    color: #676767;
+}
+
+.date-title {
+    color: #676767;
+}
+
+.numberinput-title {
+    color: #676767;
+}
+
+.nr-button-div {
+    justify-content: flex-end;
+    display: flex;
+    padding-top: 20px;
+}
+
+
+.ur-grid {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+    padding-top: 20px;
+}
+
+.this-week-grid {
+    border: solid #9C9C9C;
+    justify-content: space-evenly;
+    display: flex;
+}
+
+.ur-thisweek-dato {
+    display: block;
+    border-right: solid #9C9C9C;
+    padding-right: 18px;
+}
+
+.ur-thisweek-title {
+    color: #FBB040;
+}
+
+.ur-button {
+    color: #FBB040;
 }
