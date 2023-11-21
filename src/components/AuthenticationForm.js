@@ -13,7 +13,7 @@ import {
 } from "@mantine/core"
 
 import classes from "../styles/AuthenticationTitle.module.css"
-import { supabase } from "../pages/helper/supabaseClient.js"
+import { supabase } from "../pages/lib/helper/supabaseClient.js"
 import React, { useEffect, useState } from "react"
 import { createClient } from "@supabase/supabase-js"
 import { useFavicon } from "@mantine/hooks"

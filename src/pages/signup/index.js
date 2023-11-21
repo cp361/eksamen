@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useState } from "react";
-import { supabase } from "../helper/supabaseClient"
+import { supabase } from "../lib/helper/supabaseClient"
 import { useRouter } from "next/router"
 
 const Signup = () => {
