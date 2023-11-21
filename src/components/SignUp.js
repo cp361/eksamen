@@ -13,6 +13,7 @@ const SignUpForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      //Loading funktion//
       setLoading(true);
       const { user, session, error } = await supabase.auth.signUp({
         email,
@@ -23,6 +24,7 @@ const SignUpForm = () => {
     } catch (error) {
       alert(error.message);
     } finally {
+      //Loading funktion//
       setLoading(false);
     }
   };
