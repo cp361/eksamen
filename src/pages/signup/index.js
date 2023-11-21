@@ -19,17 +19,15 @@ const Signup = () => {
     }
   };
   return (
-    <div className="flex h-screen w-full justify-center items-center ">
-      <div className="flex flex-col w-min h-3/5 justify-evenly shadow-lg p-10 items-center">
-        <span className="text-2xl" >SignUp</span>
+    <div >
+      <div>
+        <span >SignUp</span>
         <form
           onSubmit={handleSubmit}
-          className="flex flex-col items-center mb-5 "
         >
           <input
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="border p-1 rounded mb-4"
             placeholder="email"
             type="email"
           />
@@ -37,13 +35,12 @@ const Signup = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             placeholder="password"
-            className="border p-1 rounded mb-4"
             type="password"
           />
-          <button className="bg-blue-500 rounded shadow-lg text-white w-full p-1" type="submit">SignUp</button>
+          <button  type="submit">SignUp</button>
         </form>
         <span className="text-sm" onClick={() => router.push('/')} >
-          Already nexlog user? <span className="cursor-pointer underline">Login</span>
+          Allerede oprettet en bruger? <span >Login</span>
         </span>
       </div>
     </div>
