@@ -39,7 +39,7 @@ const Signup = () => {
           />
           <button  type="submit">SignUp</button>
         </form>
-        <span className="text-sm" onClick={() => router.push('/')} >
+        <span onClick={() => router.push('/')} >
           Allerede oprettet en bruger? <span >Login</span>
         </span>
       </div>
