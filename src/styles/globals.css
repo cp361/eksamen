@@ -408,6 +408,9 @@ html {
 
 .profile-container {
     margin: 18px !important;
+
+    display: flex;
+    justify-content: space-between;
 }
 
 .profile-info {
@@ -430,6 +433,20 @@ html {
     width: 70px !important;
     height: 68px !important;
 }
+
+.profile-container  button {
+    padding: 5px 10px;
+    height: fit-content;
+    margin-top: auto;
+    margin-bottom: 10px;
+
+    background-color: var(--cphYellowHover);
+}
+.m-811560b9 {
+    overflow: visible!important;
+}
+
+
 
 /*
 !=========================================
