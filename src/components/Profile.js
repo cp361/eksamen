@@ -1,11 +1,14 @@
 import React from 'react';
 import { Container, Avatar, Button } from '@mantine/core';
+import { useRouter } from 'next/router';
 
 
 
 
 
 export function Profile() {
+
+  const router = useRouter();
 
   return (
     <Container className='profile-container' fluid h={100} bg="var(--cphYellow)">
@@ -22,7 +25,9 @@ export function Profile() {
 
         
       </div>
-        <Button>Logout</Button>
+
+        {/* Midlertidlig logud funktion til login-siden / man bliver ikke rigtigt logget ud */}
+        <Button onClick={() => router.push("/")}>Logout</Button>
     </Container>
   );
 };
