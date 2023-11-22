@@ -12,13 +12,13 @@ import 'dayjs/locale/en';
 
 export function NewReservation() {
 
-  const [value, setValue] = useState(null);
+  const [value, setValue] = useState(new Date());
   const [opened, { open, close }] = useDisclosure(false);
 
   return (
     <>
       <Container fluid className='ur-container'>
-      <Title className='ur-title'>New reservations</Title>
+      <Title className='ur-title'>Create a new reservation</Title>
         <Grid gutter="lg" className='ur-grid'>
 
         {/* VÆLGER DATO */}
@@ -31,6 +31,8 @@ export function NewReservation() {
             onChange={setValue}
             locale='en'
             excludeDate={(date) => date.getDay() === 0 || date.getDay() === 6}
+            hideOutsideDates
+            minDate={new Date()}
             />
           </div>
           
@@ -50,7 +52,7 @@ export function NewReservation() {
                 mt="md"
               />
               </Modal>
-              <Button onClick={open}>Choose time period</Button>
+              <Button className='time-button' onClick={open}>Choose time period</Button>
             </div>
             
         </Grid.Col>
@@ -67,7 +69,7 @@ export function NewReservation() {
             allowNegative={false}
           />
           <div className='nr-button-div'>
-          <Button size='xl' fullWidth color='#FBB040' className='nr-button'>NEXT</Button>
+          <Button size='md' fullWidth color='var(--cphYellow)' className='nr-button'>Next</Button>
           </div>
         </div>
         </Grid.Col>

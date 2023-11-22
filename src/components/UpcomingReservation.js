@@ -24,7 +24,7 @@ export function UpcomingReservation() {
             
           </div>
             <div className='ur-button'>
-              <Button color='#FBB040'>Cancel</Button>
+              <Button color='var(--cphYellow)'>Cancel</Button>
             </div>
             
             
@@ -43,7 +43,7 @@ export function UpcomingReservation() {
             
           </div>
           <div className='ur-button'>
-            <Button color='#FBB040'>Cancel</Button>
+            <Button color='var(--cphYellow)'>Cancel</Button>
           </div>
          
         </Grid.Col>
@@ -60,7 +60,7 @@ export function UpcomingReservation() {
             
           </div>
           <div className='ur-button'>
-            <Button color='#FBB040'>Cancel</Button>
+            <Button color='var(--cphYellow)'>Cancel</Button>
           </div>
           
         </Grid.Col>
