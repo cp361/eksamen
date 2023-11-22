@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Modal, Button, TextInput, NumberInput, Title, Grid } from '@mantine/core';
+import { Container, Combobox, Button, InputBase, NumberInput, Title, Grid, Input, useCombobox } from '@mantine/core';
 import '@mantine/dates/styles.css';
 import { useState } from 'react';
 import { DatePicker } from '@mantine/dates';
@@ -7,13 +7,37 @@ import { useDisclosure } from '@mantine/hooks';
 import 'dayjs/locale/en';
 
 
+const times = ['8:00', '9:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00'];
 
+const hours = ['1 hour', '2 hours', '3 hours', '4 hours']
 
 
 export function NewReservation() {
 
   const [value, setValue] = useState(new Date());
   const [opened, { open, close }] = useDisclosure(false);
+  const combobox = useCombobox({
+    onDropdownClose: () => combobox.resetSelectedOption(),
+  });
+
+  const secondCombobox = useCombobox({
+    onDropdownClose: () => combobox.resetSelectedOption(),
+  });
+
+  const [timeValue, timeSetValue] = useState(null);
+  const [secondTimeValue, secondTimeSetValue] = useState(null);
+
+  const options = times.map((item) => (
+    <Combobox.Option value={item} key={item}>
+      {item}
+    </Combobox.Option>
+  ));
+
+  const secondOptions = hours.map((item) => (
+    <Combobox.Option value={item} key={item}>
+      {item}
+    </Combobox.Option>
+  ));
 
   return (
     <>
@@ -43,16 +67,51 @@ export function NewReservation() {
         <Grid.Col className='nr-grid' span={4}>
             <div className='nr-modal-div'>
               <Title className='modal-title'>Time</Title>
-              <Modal className='nr-modal' opened={opened} onClose={close} title="Choose time period">
-                <TextInput label="Preferred start" placeholder="--:--"/>
-                <TextInput
-                data-autofocus
-                label="Duration (in hours and minutes)"
-                placeholder="-- hours -- minutes"
-                mt="md"
-              />
-              </Modal>
-              <Button className='time-button' onClick={open}>Choose time period</Button>
+              <Combobox
+      store={combobox}
+      onOptionSubmit={(val) => {
+        timeSetValue(val);
+        combobox.closeDropdown();
+      }}
+    >
+      <Combobox.Target className='combobox-start' >
+        <InputBase
+          component="button"
+          pointer
+          rightSection={<Combobox.Chevron />}
+          onClick={() => combobox.toggleDropdown()}
+        >
+          {timeValue || <Input.Placeholder>Preferred start</Input.Placeholder>}
+        </InputBase>
+      </Combobox.Target>
+
+      <Combobox.Dropdown>
+        <Combobox.Options>{options}</Combobox.Options>
+      </Combobox.Dropdown>
+    </Combobox>
+
+    <Combobox
+      store={Combobox}
+      onOptionSubmit={(val) => {
+        secondTimeSetValue(val);
+        combobox.closeDropdown();
+      }}
+    >
+      <Combobox.Target>
+        <InputBase
+          component="button"
+          pointer
+          rightSection={<Combobox.Chevron />}
+          onClick={() => combobox.toggleDropdown()}
+        >
+          {secondTimeValue || <Input.Placeholder>Duration (hours)</Input.Placeholder>}
+        </InputBase>
+      </Combobox.Target>
+
+      <Combobox.Dropdown>
+        <Combobox.Options>{secondOptions}</Combobox.Options>
+      </Combobox.Dropdown>
+    </Combobox>
             </div>
             
         </Grid.Col>
