@@ -40,9 +40,21 @@ const SignUpForm = () => {
                         <span className="logo-first-text">cph</span>business
                     </p>
 
-                    <Title ta="center" mt={20} mb={40} className={classes.title}>
+                    <Title ta="center" className={classes.title}>
                         Create Account
                     </Title>
+                    <Text
+                        c="dimmed"
+                        size="sm"
+                        ta="center"
+                        mt={5}
+                        onClick={() => router.push('/')}
+                    >
+                        Already have an account?
+                        <Anchor size="sm" component="button" ml={5}>
+                            Login
+                        </Anchor>
+                    </Text>
                     <form
                         onSubmit={handleSubmit}
                         className="form"
@@ -65,18 +77,6 @@ const SignUpForm = () => {
                         />
                         <button type="submit">Create account</button>
                     </form>
-                    <Text
-                        c="dimmed"
-                        size="sm"
-                        ta="center"
-                        mt={5}
-                        onClick={() => router.push('/')}
-                    >
-                        Already have an account?
-                        <Anchor size="sm" component="button" ml={5}>
-                            Login
-                        </Anchor>
-                    </Text>
                 </div>
             </Container>
 

@@ -25,7 +25,7 @@ const Signup = () => {
   return (
     <div className="bg">
       <Grid className='grid' align='center'>
-        <GridCol span='auto' h={556.8} w={505.08} className='img-bg'>
+        <GridCol span='auto' h={556.8} w={400} className='img-bg'>
           <Image
             src={sideImg}
             width={500}
