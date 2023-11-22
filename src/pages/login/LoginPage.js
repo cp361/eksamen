@@ -9,7 +9,7 @@ const LoginPage = () => {
     
     <div className="bg div-text">
       <Grid className='grid' align='center'>
-        <GridCol span='auto' h={556.8} w={500} className='img-bg'>
+        <GridCol span='auto' h={556.8} w={400} className='img-bg'>
           <Image
             src={sideImg}
             width={500}
