@@ -72,7 +72,7 @@ const SignUpForm = () => {
                         <input
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
-                            placeholder="Password"
+                            placeholder="Your password"
                             type="password"
                         />
                         <button type="submit">Create account</button>
