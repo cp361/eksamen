@@ -42,96 +42,96 @@ export function NewReservation() {
   return (
     <>
       <Container fluid className='ur-container'>
-      <Title className='ur-title'>Create a new reservation</Title>
+        <Title className='ur-title'>Create a new reservation</Title>
         <Grid gutter="lg" className='ur-grid'>
 
-        {/* VÆLGER DATO */}
+          {/* VÆLGER DATO */}
 
-        <Grid.Col className='nr-grid' span={4}>
-          <div className='nr-datepicker-div'>
-            <Title className='date-title'>Date</Title>
-            <DatePicker className='nr-datepicker'
-            value={value}
-            onChange={setValue}
-            locale='en'
-            excludeDate={(date) => date.getDay() === 0 || date.getDay() === 6}
-            hideOutsideDates
-            minDate={new Date()}
-            />
-          </div>
-          
+          <Grid.Col className='nr-grid' span={4}>
+            <div className='nr-datepicker-div'>
+              <Title className='date-title'>Date</Title>
+              <DatePicker className='nr-datepicker'
+                value={value}
+                onChange={setValue}
+                locale='en'
+                excludeDate={(date) => date.getDay() === 0 || date.getDay() === 6}
+                hideOutsideDates
+                minDate={new Date()}
+              />
+            </div>
+
           </Grid.Col>
-            
-        {/* VÆLGER TIDSPUNKT */}
-      
-        <Grid.Col className='nr-grid' span={4}>
+
+          {/* VÆLGER TIDSPUNKT */}
+
+          <Grid.Col className='nr-grid' span={4}>
             <div className='nr-modal-div'>
               <Title className='modal-title'>Time</Title>
               <Combobox
-      store={combobox}
-      onOptionSubmit={(val) => {
-        timeSetValue(val);
-        combobox.closeDropdown();
-      }}
-    >
-      <Combobox.Target className='combobox-start' >
-        <InputBase
-          component="button"
-          pointer
-          rightSection={<Combobox.Chevron />}
-          onClick={() => combobox.toggleDropdown()}
-        >
-          {timeValue || <Input.Placeholder>Preferred start</Input.Placeholder>}
-        </InputBase>
-      </Combobox.Target>
+                store={combobox}
+                onOptionSubmit={(val) => {
+                  timeSetValue(val);
+                  combobox.closeDropdown();
+                }}
+              >
+                <Combobox.Target className='combobox-start' >
+                  <InputBase
+                    component="button"
+                    pointer
+                    rightSection={<Combobox.Chevron />}
+                    onClick={() => combobox.toggleDropdown()}
+                  >
+                    {timeValue || <Input.Placeholder>Preferred start</Input.Placeholder>}
+                  </InputBase>
+                </Combobox.Target>
 
-      <Combobox.Dropdown>
-        <Combobox.Options>{options}</Combobox.Options>
-      </Combobox.Dropdown>
-    </Combobox>
+                <Combobox.Dropdown>
+                  <Combobox.Options>{options}</Combobox.Options>
+                </Combobox.Dropdown>
+              </Combobox>
 
-    <Combobox
-      store={Combobox}
-      onOptionSubmit={(val) => {
-        secondTimeSetValue(val);
-        combobox.closeDropdown();
-      }}
-    >
-      <Combobox.Target>
-        <InputBase
-          component="button"
-          pointer
-          rightSection={<Combobox.Chevron />}
-          onClick={() => combobox.toggleDropdown()}
-        >
-          {secondTimeValue || <Input.Placeholder>Duration (hours)</Input.Placeholder>}
-        </InputBase>
-      </Combobox.Target>
+              <Combobox
+                store={Combobox}
+                onOptionSubmit={(val) => {
+                  secondTimeSetValue(val);
+                  combobox.closeDropdown();
+                }}
+              >
+                <Combobox.Target>
+                  <InputBase
+                    component="button"
+                    pointer
+                    rightSection={<Combobox.Chevron />}
+                    onClick={() => combobox.toggleDropdown()}
+                  >
+                    {secondTimeValue || <Input.Placeholder>Duration (hours)</Input.Placeholder>}
+                  </InputBase>
+                </Combobox.Target>
 
-      <Combobox.Dropdown>
-        <Combobox.Options>{secondOptions}</Combobox.Options>
-      </Combobox.Dropdown>
-    </Combobox>
+                <Combobox.Dropdown>
+                  <Combobox.Options>{secondOptions}</Combobox.Options>
+                </Combobox.Dropdown>
+              </Combobox>
             </div>
-            
-        </Grid.Col>
 
-        {/* VÆLGER DELTAGERE */}
+          </Grid.Col>
 
-        <Grid.Col className='nr-grid' span={4}>
-        
-        <div className='nr-numberinput-div'>
-          <Title className='numberinput-title'>Attendants</Title>
-          <NumberInput className='nr-numberinput'
-            label="Attendants"
-            placeholder="0"
-            allowNegative={false}
-          />
-          <div className='nr-button-div'>
-          <Button size='md' fullWidth color='var(--cphYellow)' className='nr-button'>Next</Button>
-          </div>
-        </div>
-        </Grid.Col>
+          {/* VÆLGER DELTAGERE */}
+
+          <Grid.Col className='nr-grid' span={4}>
+
+            <div className='nr-numberinput-div'>
+              <Title className='numberinput-title'>Attendants</Title>
+              <NumberInput className='nr-numberinput'
+                label="Attendants"
+                placeholder="0"
+                allowNegative={false}
+              />
+              <div className='nr-button-div'>
+                <Button size='md' fullWidth color='var(--cphYellow)' className='nr-button'>Next</Button>
+              </div>
+            </div>
+          </Grid.Col>
         </Grid>
       </Container>
 

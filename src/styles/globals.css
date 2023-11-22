@@ -413,8 +413,6 @@ html {
 */
 
 .profile-container {
-    margin: 18px !important;
-
     display: flex;
     justify-content: space-between;
 }
