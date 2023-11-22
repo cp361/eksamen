@@ -282,9 +282,7 @@ html {
 }
 
 .nr-numberinput-div{
-    padding-left: 60px;
-    padding-top: 20px;
-    padding-bottom: 20px; 
+    margin: auto!important;
 }
 
 
@@ -315,6 +313,11 @@ html {
     font-size: 1.5rem!important;
 }
 
+.m-396ce5cb[data-selected] {
+    --_day-bg: var(--cphYellow)!important;
+    --_day-color: var(--mantine-color-white);
+}
+
 .numberinput-title {
     color: var(--textColor2);
     font-size: 1.5rem!important;
@@ -331,12 +334,11 @@ html {
     justify-content: flex-start;
     display: flex;
     margin: 20px;
+    padding: 10px 0 20px 0!important;
 }
 
 .nr-datepicker-div {
-    padding-left: 60px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    margin: auto!important;
 }
 .time-button {
     background-color: var(--cphYellow)!important;
