@@ -6,6 +6,7 @@ import { Grid, GridCol } from '@mantine/core'
 import Image from 'next/image'
 import sideImg from '../../assets/home-background.png'
 import SignUpForm from "@/components/SignUp";
+import { PageWrapper } from "@/pagewrapper";
 
 const Signup = () => {
   const [email, setEmail] = useState("");
@@ -23,26 +24,28 @@ const Signup = () => {
     }
   };
   return (
-    <div className="bg">
-      <Grid className='grid' align='center'>
-        <GridCol span='auto' h={556.8} w={400} className='img-bg'>
-          <Image
-            src={sideImg}
-            width={500}
-            height={556.8}
-            alt="Login side image"
-          />
-        </GridCol>
+    <PageWrapper>
+      <div className="bg">
+        <Grid className='grid' align='center'>
+          <GridCol span='auto' h={556.8} w={400} className='img-bg'>
+            <Image
+              src={sideImg}
+              width={500}
+              height={556.8}
+              alt="Login side image"
+            />
+          </GridCol>
 
-        <GridCol span='auto'>
+          <GridCol span='auto'>
 
-        <SignUpForm />
+            <SignUpForm />
 
-        </GridCol>
+          </GridCol>
 
-      </Grid>
-      
-    </div>
+        </Grid>
+
+      </div>
+    </PageWrapper>
   );
 };
 
