@@ -14,7 +14,7 @@ const SignUpForm = () => {
     e.preventDefault();
     try {
       //Loading funktion//
-      setLoading(true);
+      // setLoading(true);
       const { user, session, error } = await supabase.auth.signUp({
         email,
         password,
@@ -25,7 +25,7 @@ const SignUpForm = () => {
       alert(error.message);
     } finally {
       //Loading funktion//
-      setLoading(false);
+      // setLoading(false);
     }
   };
   return (
