@@ -215,11 +215,18 @@ body {
 }
 
 .nr-datepicker {
-    padding-top: 80px;
+    padding-top: 20px;
+   
 }
 
 .nr-numberinput {
-    padding-top: 80px;
+    padding-top: 5px;
+}
+
+.nr-numberinput-div{
+    padding-left: 60px;
+    padding-top: 20px;
+    padding-bottom: 20px; 
 }
 
 
@@ -229,8 +236,14 @@ body {
 }
 
 .modal-title {
-    padding-bottom: 105px;
+    padding-bottom: 30px;
     color: #676767;
+}
+
+.nr-modal-div {
+    padding-left: 60px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .header-title {
@@ -249,7 +262,20 @@ body {
 .nr-button-div {
     justify-content: flex-end;
     display: flex;
+    padding-top: 140px;
+}
+
+.nr-grid {
+    border: solid #9C9C9C;
+    justify-content: flex-start;
+    display: flex;
+    margin: 20px;
+}
+
+.nr-datepicker-div {
+    padding-left: 60px;
     padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 
@@ -264,12 +290,16 @@ body {
     border: solid #9C9C9C;
     justify-content: space-evenly;
     display: flex;
+    margin: 20px;
 }
 
 .ur-thisweek-dato {
     display: block;
     border-right: solid #9C9C9C;
-    padding-right: 18px;
+    padding-right: 20px;
+    line-height: 10px;
+    padding-top: 16px;
+    padding-bottom: 10px;
 }
 
 .ur-thisweek-title {
@@ -278,10 +308,59 @@ body {
 
 .ur-button {
     color: #FBB040;
+    padding-top: 95px;
 }
 
+.ur-thisweek-info {
+    line-height: 10px;
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-bottom: 15px;
+}
 
+.title-date {
+    font-size: 40px;
+}
 
+.ur-title{
+    color: #676767;
+    padding-top: 20px;
+}
+
+/*
+!=========================================
+!=========================================
+!=========================================
+!============ Profile Page ===============
+!=========================================
+!=========================================
+!=========================================
+*/
+
+.profile-container {
+    margin: 18px !important;
+}
+
+.profile-info {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.profile-photo {
+    padding-top: 15px;
+}
+
+.profile-text {
+    line-height: 10px;
+    padding-left: 20px;
+    padding-top: 10px;
+    color: white;
+}
+
+.profile-avatar {
+    width: 70px !important;
+    height: 68px !important;
+}
 
 /*
 !=========================================
