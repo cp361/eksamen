@@ -32,7 +32,6 @@ export function AuthenticationForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      //Loading funktion//
       // setLoading(true);
       const { user, session, error } = await supabase.auth.signInWithPassword({
         email,
@@ -42,14 +41,14 @@ export function AuthenticationForm() {
       router.replace("/home");
     } catch (error) {
       alert(error.message);
-    } finally {
-      //Loading funktion//
-      // setLoading(false);
     }
+    // finally {
+    //   setLoading(false);
+    // }
   };
 
   return (
-    <Container h="{430}" pt={30} className="form-bg">
+    <Container h={556.8} w={505.08} pt={30} className="form-bg">
       <Center>
         <div className="logo">
           <span className="logo-left"></span>
@@ -67,7 +66,7 @@ export function AuthenticationForm() {
       <div>
         <div>
           <Title ta="center" className={classes.title}>
-            Velkommen tilbage!
+            Welcome Back!
           </Title>
           <Text
             c="dimmed"
@@ -76,25 +75,27 @@ export function AuthenticationForm() {
             mt={5}
             onClick={() => router.push("/signup")}
           >
-            Har du ikke en bruger endnu?
+            Don't have an account?
             <Anchor size="sm" component="button" ml={5}>
-              Opret bruger
+              Create Account
             </Anchor>
           </Text>
         </div>
 
         <div>
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} className="form">
+            <label>Email</label>
             <input
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="email"
+              placeholder="cph-xxYYY@cphbusiness.dk"
               type="email"
             />
+            <label>Password</label>
             <input
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              placeholder="password"
+              placeholder="Your password"
               type="password"
             />
             <button type="submit">Login</button>

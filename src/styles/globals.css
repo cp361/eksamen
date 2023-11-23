@@ -9,7 +9,7 @@
     --textColor2: #676767;
 }
 
-body {
+html {
     font-family: poppins, sans-serif!important;
 }
 
@@ -107,6 +107,48 @@ body {
     font-family: roboto, sans-serif!important;
     font-weight: 600!important;
 }
+
+
+
+
+
+/*
+!=========================================
+!=========================================
+!=========================================
+!============= Home / Index ==============
+!=========================================
+!=========================================
+!=========================================
+*/
+.__m__-Rrem {
+    --col-flex-grow: 0!important;
+}
+.right-bg {
+    background-color: white !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*
@@ -208,6 +250,22 @@ body {
     
 }
 
+
+
+
+
+
+
+
+/*
+!=========================================
+!=========================================
+!=========================================
+!============= Reservations ==============
+!=========================================
+!=========================================
+!=========================================
+*/
 .nr-container {
     width: 100%;
     padding-top: 40px;
@@ -215,41 +273,75 @@ body {
 }
 
 .nr-datepicker {
-    padding-top: 80px;
+    padding-top: 20px;
+   
 }
 
 .nr-numberinput {
-    padding-top: 80px;
+    padding-top: 5px;
+}
+
+.nr-numberinput-div{
+    margin: auto!important;
 }
 
 
 .nr-flex {
-    border: solid #9C9C9C;
+    border: solid var(--textColor);
     padding: 10%;
 }
 
 .modal-title {
-    padding-bottom: 105px;
-    color: #676767;
+    padding-bottom: 30px;
+    color: var(--textColor2);
+    font-size: 1.5rem!important;
+}
+
+.nr-modal-div {
+    padding-left: 60px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .header-title {
     padding-bottom: 20px;
-    color: #676767;
+    color: var(--textColor2);
 }
 
 .date-title {
-    color: #676767;
+    color: var(--textColor2);
+    font-size: 1.5rem!important;
+}
+
+.m-396ce5cb[data-selected] {
+    --_day-bg: var(--cphYellow)!important;
+    --_day-color: var(--mantine-color-white);
 }
 
 .numberinput-title {
-    color: #676767;
+    color: var(--textColor2);
+    font-size: 1.5rem!important;
 }
 
 .nr-button-div {
     justify-content: flex-end;
     display: flex;
-    padding-top: 20px;
+    padding-top: 140px;
+}
+
+.nr-grid {
+    border: 1px solid var(--textColor);
+    justify-content: flex-start;
+    display: flex;
+    margin: 20px;
+    padding: 10px 0 20px 0!important;
+}
+
+.nr-datepicker-div {
+    margin: auto!important;
+}
+.time-button {
+    background-color: var(--cphYellow)!important;
 }
 
 
@@ -261,25 +353,102 @@ body {
 }
 
 .this-week-grid {
-    border: solid #9C9C9C;
-    justify-content: space-evenly;
+    border: 1px solid var(--textColor);
+    justify-content: center;
     display: flex;
+    margin-block: 20px;
+
 }
 
 .ur-thisweek-dato {
     display: block;
-    border-right: solid #9C9C9C;
-    padding-right: 18px;
+    border-right: 1px solid var(--textColor);
+    line-height: 10px;
+    padding: 10px;
+    text-align: center;
 }
 
 .ur-thisweek-title {
-    color: #FBB040;
+    color: var(--cphYellow);
 }
 
 .ur-button {
-    color: #FBB040;
+    color: var(--cphYellow);
+
+    display: flex;
+    align-items: end;
+
+    padding: 0 10px 5px 0;
 }
 
+.ur-thisweek-info {
+    line-height: 10px;
+    padding: 10px;
+
+
+    width: 150px;
+}
+
+.title-date {
+    font-size: 1.7rem;
+}
+
+.ur-title{
+    color: var(--textColor2);
+    padding-top: 20px;
+}
+
+.combobox-start {
+    padding-top: 20px;
+}
+
+/*
+!=========================================
+!=========================================
+!=========================================
+!============ Profile Page ===============
+!=========================================
+!=========================================
+!=========================================
+*/
+
+.profile-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.profile-info {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.profile-photo {
+    padding-top: 15px;
+}
+
+.profile-text {
+    line-height: 10px;
+    padding-left: 20px;
+    padding-top: 10px;
+    color: white;
+}
+
+.profile-avatar {
+    width: 70px !important;
+    height: 68px !important;
+}
+
+.profile-container  button {
+    padding: 5px 10px;
+    height: fit-content;
+    margin-top: auto;
+    margin-bottom: 10px;
+
+    background-color: var(--cphYellowHover);
+}
+.m-811560b9 {
+    overflow: visible!important;
+}
 
 
 
@@ -287,7 +456,7 @@ body {
 !=========================================
 !=========================================
 !=========================================
-!============ Sign Up Page ===============
+!=============== Form ====================
 !=========================================
 !=========================================
 !=========================================
@@ -299,7 +468,7 @@ body {
 .form label {
     font-size: 20px;
     font-weight: 400;
-
+    color: var(--textColor)
 }
 .form input {
     padding: 10px;
