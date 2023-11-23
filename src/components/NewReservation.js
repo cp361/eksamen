@@ -16,6 +16,10 @@ export function NewReservation() {
 
   const [value, setValue] = useState(new Date());
   const [opened, { open, close }] = useDisclosure(false);
+
+  const [timeValue, timeSetValue] = useState(null);
+  const [secondTimeValue, secondTimeSetValue] = useState(null);
+
   const combobox = useCombobox({
     onDropdownClose: () => combobox.resetSelectedOption(),
   });
@@ -23,9 +27,6 @@ export function NewReservation() {
   const secondCombobox = useCombobox({
     onDropdownClose: () => combobox.resetSelectedOption(),
   });
-
-  const [timeValue, timeSetValue] = useState(null);
-  const [secondTimeValue, secondTimeSetValue] = useState(null);
 
   const options = times.map((item) => (
     <Combobox.Option value={item} key={item}>
@@ -67,51 +68,54 @@ export function NewReservation() {
           <Grid.Col className='nr-grid' span={4}>
             <div className='nr-modal-div'>
               <Title className='modal-title'>Time</Title>
+                {/* Combobox 1 */}
               <Combobox
-                store={combobox}
-                onOptionSubmit={(val) => {
-                  timeSetValue(val);
-                  combobox.closeDropdown();
-                }}
-              >
-                <Combobox.Target className='combobox-start' >
-                  <InputBase
-                    component="button"
-                    pointer
-                    rightSection={<Combobox.Chevron />}
-                    onClick={() => combobox.toggleDropdown()}
-                  >
-                    {timeValue || <Input.Placeholder>Preferred start</Input.Placeholder>}
-                  </InputBase>
-                </Combobox.Target>
+      store={combobox}
+      onOptionSubmit={(val) => {
+        timeSetValue(val);
+        combobox.closeDropdown();
+      }}
+    >
+      <Combobox.Target>
+        <InputBase
+          component="button"
+          pointer
+          rightSection={<Combobox.Chevron />}
+          onClick={() => combobox.toggleDropdown()}
+        >
+          {timeValue || <Input.Placeholder>Pick value</Input.Placeholder>}
+        </InputBase>
+      </Combobox.Target>
 
-                <Combobox.Dropdown>
-                  <Combobox.Options>{options}</Combobox.Options>
-                </Combobox.Dropdown>
-              </Combobox>
+      <Combobox.Dropdown>
+        <Combobox.Options>{options}</Combobox.Options>
+      </Combobox.Dropdown>
+    </Combobox>
 
-              <Combobox
-                store={Combobox}
-                onOptionSubmit={(val) => {
-                  secondTimeSetValue(val);
-                  combobox.closeDropdown();
-                }}
-              >
-                <Combobox.Target>
-                  <InputBase
-                    component="button"
-                    pointer
-                    rightSection={<Combobox.Chevron />}
-                    onClick={() => combobox.toggleDropdown()}
-                  >
-                    {secondTimeValue || <Input.Placeholder>Duration (hours)</Input.Placeholder>}
-                  </InputBase>
-                </Combobox.Target>
+      {/* Combobox 2 */}
+    <Combobox
+      store={secondCombobox}
+      onOptionSubmit={(val) => {
+        secondTimeSetValue(val);
+        secondCombobox.closeDropdown();
+      }}
+    >
+      <Combobox.Target className="combobox-start">
+        <InputBase
+          component="button"
+          pointer
+          rightSection={<Combobox.Chevron />}
+          onClick={() => secondCombobox.toggleDropdown()}
+        >
+          {secondTimeValue || <Input.Placeholder>Pick value</Input.Placeholder>}
+        </InputBase>
+      </Combobox.Target>
 
-                <Combobox.Dropdown>
-                  <Combobox.Options>{secondOptions}</Combobox.Options>
-                </Combobox.Dropdown>
-              </Combobox>
+      <Combobox.Dropdown>
+        <Combobox.Options>{secondOptions}</Combobox.Options>
+      </Combobox.Dropdown>
+    </Combobox>
+              
             </div>
 
           </Grid.Col>
