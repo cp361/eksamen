@@ -3,6 +3,7 @@
 * {
   --col-flex-grow: 0!important;
   flex-wrap: nowrap!important;
+  --grid-gutter: 0;
 }
 
 :root {
@@ -270,6 +271,9 @@ label {
 !=========================================
 !=========================================
 */
+.cr-container .cr-grid{
+  --grid-gutter: 1!important;
+}
 .nr-container {
   width: 100%;
   padding-top: 40px;
@@ -315,6 +319,10 @@ label {
   font-size: 1.5rem !important;
 }
 
+.__m__-rlh .__m__-r95 {
+  --grid-gutter: 0!important;
+}
+
 .m-396ce5cb[data-selected] {
   --_day-bg: var(--cphYellow) !important;
   --_day-color: var(--mantine-color-white);
@@ -347,7 +355,8 @@ label {
 }
 
 .ur-container p {
- color: var(--textColor)
+ color: var(--textColor);
+
 }
 
 
@@ -417,7 +426,7 @@ label {
 !=========================================
 !=========================================
 !=========================================
-!============ New Reservations ===========
+!======== Reservations Complete ==========
 !=========================================
 !=========================================
 !=========================================
@@ -653,4 +662,18 @@ label {
 
 .classroom-facilities {
     
+}
+
+
+
+
+
+
+
+
+
+
+.yallah {
+  font-size: 10rem;
+  color: cyan
 }

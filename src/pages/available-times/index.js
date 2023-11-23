@@ -14,6 +14,7 @@ import { DatePicker } from '@mantine/dates';
 import '@mantine/dates/styles.css';
 import { useRouter } from 'next/router';
 import ClassRoomCard from '@/components/ClassRooms'
+import { Profile } from '@/components/Profile';
 
 const availableTimes = () => {
 
@@ -56,6 +57,9 @@ const availableTimes = () => {
 
         {/* Sidebar */}
         <div className='sidebar'>
+          <div className='profile-sidebar'>
+            {/* <Profile /> */}
+          </div>
           <Button className='back-button' onClick={() => router.push("/home")} size='md' color='var(--cphYellowHover)'>Back</Button>
         </div>
         <Grid>
