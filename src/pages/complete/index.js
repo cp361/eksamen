@@ -14,16 +14,16 @@ export default function Complete() {
 
       <Grid>
 
-        <GridCol span='auto' w={94} h={900}>
+        <GridCol span='auto' w={94} h={738.39} className='rc'>
 
           <Image 
           src={sideImg}
-          height={900}
+          height={738.39}
           />
 
         </GridCol>
 
-        <GridCol span='auto' className='right-bg'>
+        <GridCol span='auto' className='right-bg rc'>
 
         <ReservationComplete />
 

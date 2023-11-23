@@ -10,7 +10,7 @@ import Image from 'next/image'
 
 export default function newReservation() {
   return (
-    // <PageWrapper>
+    <PageWrapper>
     <div className='bg'>
 
       <Grid>
@@ -35,5 +35,6 @@ export default function newReservation() {
 
       </Grid>
     </div>
+    </PageWrapper>
   );
 }

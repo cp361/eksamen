@@ -169,7 +169,7 @@ const availableTimes = () => {
 
                 </div>
 
-                <Button size='md' color='var(--cphYellow)'>Confirm reservation</Button>
+                <Button onClick={() => router.push('/complete')} size='md' color='var(--cphYellow)'>Confirm reservation</Button>
 
               </div>
 

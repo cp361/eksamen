@@ -265,7 +265,7 @@ label {
 !=========================================
 !=========================================
 !=========================================
-!============= Reservations ==============
+!============ New Reservations ===========
 !=========================================
 !=========================================
 !=========================================
@@ -346,6 +346,11 @@ label {
   background-color: var(--cphYellow) !important;
 }
 
+.ur-container p {
+ color: var(--textColor)
+}
+
+
 .ur-grid {
   display: flex;
   justify-content: space-between;
@@ -389,7 +394,8 @@ label {
 }
 
 .title-date {
-  font-size: 1.7rem;
+  font-size: 2rem;
+  color: var(--textColor2)
 }
 
 .ur-title {
@@ -400,6 +406,124 @@ label {
 .combobox-start {
   padding-top: 20px;
 }
+
+
+
+
+
+
+
+/*
+!=========================================
+!=========================================
+!=========================================
+!============ New Reservations ===========
+!=========================================
+!=========================================
+!=========================================
+*/
+.rc {
+  height: 80dvh;
+}
+.rc-title {
+  color: var(--textColor2);
+}
+.rc-info-title {
+  color: var(--textColor2);
+  font-size: 1.3rem!important;
+}
+.rc-info-text {
+  color: var(--textColor)!important;
+
+}
+.rc-paper-div {
+  display: flex;
+  justify-content: center;
+
+}
+.rc-facilities-elements {
+  display: flex;
+  justify-content: space-between;
+
+  margin-bottom: 20px;
+}
+
+.rc-facilities-item {
+  text-align: center;
+}
+
+
+
+.rc-paper {
+  border: 1px solid var(--textColor)!important;
+}
+.rc-img {
+  height: 200px;
+  width: 200px;
+}
+
+.rc-button {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.angry-grid {
+  display: grid; 
+
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr;
+  
+  gap: 10px;
+  
+}
+ 
+#item-0 {
+
+  grid-row-start: 1;
+  grid-column-start: 1;
+
+  grid-row-end: 2;
+  grid-column-end: 3;
+  
+}
+.item-0-text {
+  margin-bottom: 10px!important;
+}
+#item-2 {
+  margin:auto;
+
+  grid-row-start: 1;
+  grid-column-start: 2;
+
+  grid-row-end: 2;
+  grid-column-end: 3;
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*
 !=========================================
