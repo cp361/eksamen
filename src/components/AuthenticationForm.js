@@ -19,11 +19,15 @@ import React, { useEffect, useState } from "react";
 import { createClient } from "@supabase/supabase-js";
 import { useFavicon } from "@mantine/hooks";
 import { useRouter } from "next/router";
+//Loading funktion//
+import setLoading from "@/pages/testingenviorement/loader";
 
 export function AuthenticationForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const router = useRouter();
+  //Loading funktion//
+  // const [setLoading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -37,7 +41,7 @@ export function AuthenticationForm() {
       router.replace("/home");
     } catch (error) {
       alert(error.message);
-    } 
+    }
     // finally {
     //   setLoading(false);
     // }

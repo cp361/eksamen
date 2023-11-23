@@ -1,7 +1,6 @@
-import React from "react";
-import { Loader } from "@mantine/core";
+import React, { useState } from "react";
+import { Loader, LoadingOverlay } from "@mantine/core";
 
-const HomeLoader = () => {
-  return;
-  <Loader color="orange" size="xl" />;
-};
+function LoadSwitch() {
+  const [loading, setLoading] = useState(false);
+}
