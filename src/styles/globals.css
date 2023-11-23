@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Hepta+Slab:wght@500&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
+* {
+  --col-flex-grow: 0!important;
+  flex-wrap: nowrap!important;
+}
+
 :root {
   --cphBlue: #00163b;
   --cphYellow: #fbb040;
@@ -18,9 +23,6 @@ html {
   display: grid;
   justify-content: center;
   align-items: center;
-}
-.__m__-Rmm {
-  --grid-gutter: 0 !important;
 }
 .m-96bdd299 {
   padding: 0 !important;
@@ -132,6 +134,15 @@ html {
 !=========================================
 !=========================================
 */
+.__m__-r21 {
+  --grid-gutter: none!important;
+}
+.__m__-R6m {
+  --grid-gutter: none!important;
+}
+.__m__-R1bem {
+  --grid-gutter: none!important;
+}
 
 .m-410352e9 {
   overflow: visible !important;
@@ -145,20 +156,27 @@ html {
 }
 
 .sidebar {
-  width: 100px;
-  background-color: var(--cphBlue);
-  margin-right: 30px;
+  display: flex;
+  justify-content: center;
+  background-image: url("../assets/sidebar-background.png");
+  height: 90vh;
+}
+.sidebar > * {
+  margin-top: 20px;
+}
+.back-button {
+  margin-inline: 10px;
 }
 
 .booking-flow-icons {
   display: flex;
-  /* justify-content: space-between; */
   align-items: center;
+
 }
 
 .booking-flow {
   background-color: white;
-  /* height: 556.8px; */
+  height: 90%;
 }
 .booking-flow-timeline1 {
   height: 5px;
@@ -175,7 +193,19 @@ html {
 .booking-flow-timeline3 {
   height: 5px;
   width: 486px;
-  background-color: var(--cphYellow);
+  background: rgb(251, 176, 64);
+  background: linear-gradient(
+    90deg,
+    rgba(251, 176, 64, 1) 0%,
+    rgba(251, 176, 64, 1) 14%,
+    rgba(156, 156, 156, 1) 30%
+  );
+  border-radius: 20px;
+}
+.booking-flow-timeline4 {
+  height: 5px;
+  width: 186px;
+  background-color: var(--textColor);
   border-radius: 20px;
 }
 .booking-icons {
@@ -208,16 +238,27 @@ html {
   display: grid;
   margin-bottom: 15px;
 }
-
-.main-col2 span {
-  color: var(--cphYellow);
+.new-reservation h1,
+h3,
+h4,
+label {
+  color: var(--textColor2);
 }
-.class-rooms {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  grid-column-gap: 10px;
-  grid-row-gap: 10px;
+.new-reservation {
+  margin-top: -40px;
+  padding-inline: 30px;
+  padding-bottom: 10px;
+}
+.new-reservation p {
+  color: var(--textColor);
+}
+.reservation-info {
+  line-height: 0.3rem;
+  padding-bottom: 20px;
+}
+.date {
+  margin-top: -30px;
+  margin-bottom: -20px;
 }
 
 /*
@@ -456,7 +497,7 @@ html {
 !=========================================
 !=========================================
 !=========================================
-!============ Show Classrooms ============
+!============ Classroom Card =============
 !=========================================
 !=========================================
 !=========================================
@@ -468,9 +509,24 @@ html {
   grid-template-rows: repeat(5, 1fr);
   grid-column-gap: 10px;
   grid-row-gap: 10px;
-
 }
 
-.classroom-facilities {
-    
+.classroom-card {
+  border: 1px solid var(--textColor);
+  padding: 10px;
+  width: 220px;
+}
+
+.classroom-card-img {
+  display: flex;
+  margin-inline: auto;
+}
+
+.classroom-number {
+  color: var(--textColor2);
+  margin-top: -10px;
+}
+
+.classroom-facility {
+  line-height: 0.3rem;
 }

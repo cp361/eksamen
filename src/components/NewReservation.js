@@ -6,6 +6,7 @@ import { DatePicker } from '@mantine/dates';
 import { useDisclosure } from '@mantine/hooks';
 import 'dayjs/locale/en';
 import useMyContext from '@/context/my-context';
+import { useRouter } from 'next/router';
 
 
 const times = ['8:00', '9:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00'];
@@ -14,6 +15,8 @@ const hours = ['1 hour', '2 hours', '3 hours', '4 hours']
 
 
 export function NewReservation() {
+
+  const router = useRouter();
 
   const contextValue = useMyContext();
 
@@ -135,7 +138,7 @@ export function NewReservation() {
                 allowNegative={false}
               />
               <div className='nr-button-div'>
-                <Button size='md' fullWidth color='var(--cphYellow)' className='nr-button'>Next</Button>
+                <Button onClick={() => router.push("/available-times")} size='md' fullWidth color='var(--cphYellow)' className='nr-button'>Next</Button>
               </div>
             </div>
           </Grid.Col>

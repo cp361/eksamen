@@ -1,16 +1,26 @@
 import React, { useEffect, useState } from 'react'
-import { Grid, GridCol } from '@mantine/core'
+import { Button, Grid, GridCol } from '@mantine/core'
 import Image from 'next/image'
 import sideImg from '../../assets/sidebar-background.png'
-import classroom from '../../assets/classroom.png'
 
 // Icons
 import { FaEdit } from "react-icons/fa";
 import { FaReceipt } from "react-icons/fa";
 import { FaRegCalendarAlt } from "react-icons/fa";
+
+
 import { supabase } from '../lib/helper/supabaseClient';
+import { DatePicker } from '@mantine/dates';
+import '@mantine/dates/styles.css';
+import { useRouter } from 'next/router';
+import ClassRoomCard from '@/components/ClassRooms'
 
 const availableTimes = () => {
+
+  const router = useRouter();
+
+  const [value, setValue] = useState(new Date());
+
   const [fetchError, setFetchError] = useState(null);
   const [ClassRooms, setClassRooms] = useState(null);
 
@@ -19,7 +29,8 @@ const availableTimes = () => {
     const fetchClassRooms = async () => {
       const { data, error } = await supabase
         .from('classrooms')
-        .select()
+        .select('')
+        .limit(1)
 
       if (error) {
         setFetchError('Could not fetch class rooms')
@@ -38,20 +49,21 @@ const availableTimes = () => {
 
   return (
 
-    <div className="booking div-text">
-      {/* Sidebar */}
-      <div className='sidebar'>
-
-      </div>
+    <div className="booking div-text bg">
 
       {/* Booking Flow */}
       <Grid span='auto' className='booking-flow'>
+
+        {/* Sidebar */}
+        <div className='sidebar'>
+          <Button className='back-button' onClick={() => router.push("/home")} size='md' color='var(--cphYellowHover)'>Back</Button>
+        </div>
         <Grid>
 
           {/* Site Title */}
-          <div>
+          <div className='new-reservation'>
 
-            <h1>Ny Booking</h1>
+            <h1>New Reservation</h1>
 
 
 
@@ -65,9 +77,9 @@ const availableTimes = () => {
               <FaRegCalendarAlt fontSize={50} className='booking-icons absolute' />
               <span className='booking-flow-timeline2'></span>
               <FaEdit fontSize={75} className='booking-icons-middle absolute' />
-              <span className='booking-flow-timeline2'></span>
-              <FaReceipt fontSize={50} className='booking-icons absolute' />
-              <span className='booking-flow-timeline1'></span>
+              <span className='booking-flow-timeline3'></span>
+              <FaReceipt fontSize={50} className='booking-icons absolute' color='var(--textColor)' />
+              <span className='booking-flow-timeline4' color='var(--textColor)'></span>
 
             </div>
 
@@ -77,21 +89,28 @@ const availableTimes = () => {
               {/* Your booking */}
               <div className='main-col1'>
 
-                <h3>Søgekriterier</h3>
+                <h3>Your booking</h3>
 
                 <div className='labels'>
-                  <label for="attendants">Antal personer</label>
-                  <input type="number" id='attendants' name='attendants' placeholder='0'></input>
+                  <label for="attendants">Attendants</label>
+                  <input type="number" id='attendants' name='attendants' placeholder='4'></input>
                 </div>
 
                 <div className='labels'>
-                  <label for="time">Tidspunkt</label>
-                  <input type="datetime-local" id='time' name='time' placeholder='0'></input>
+                  <label for="time">Preffered time</label>
+                  <input type="time" id='time' name='time' placeholder='12:00 - 16:300'></input>
                 </div>
 
                 <div className='labels'>
-                  <label for="attendants">Antal personer</label>
-                  <input type="date" id='date' name='date' placeholder=''></input>
+                  <label for="date">Date</label>
+                  <DatePicker className='nr-datepicker'
+                    value={value}
+                    onChange={setValue}
+                    locale='en'
+                    excludeDate={(date) => date.getDay() === 0 || date.getDay() === 6}
+                    hideOutsideDates
+                    minDate={new Date()}
+                  />
                 </div>
 
               </div>
@@ -99,26 +118,18 @@ const availableTimes = () => {
               {/* Available Times */}
               <div className='main-col2'>
 
-                <h3>Ledige tider <span>'valgte tid'</span></h3>
+                <h3>Available classrooms</h3>
 
-                <div className='class-rooms'>
+                <div className=''>
 
                   {fetchError && (<p> {fetchError} </p>)}
                   {ClassRooms && (
-                    <div className='classrooms'>
-                      {ClassRooms.map(ClassRooms => (
-                        <div>
-                          <Image
-                            src={classroom}
-                          />
-                          <p className='classroom-number'>
-                            {ClassRooms.roomnumber}
-                          </p>
-                          <p className='classroom-facilities'>
-                            {ClassRooms.facilities}
-                          </p>
-                        </div>
-                      ))}
+                    <div className=''>
+                      <div>
+                        {ClassRooms.map(ClassRooms => (
+                          <ClassRoomCard key={ClassRooms.id} classroom={ClassRooms} />
+                        ))}
+                      </div>
                     </div>
                   )}
 
@@ -128,35 +139,37 @@ const availableTimes = () => {
               {/* Booking Info */}
               <div className='main-col3'>
 
-                <h3>'valgte lokale'</h3>
+                <h3>CL - 209</h3>
 
-                <div>
-                  <h4>Inkluderet i lokalet</h4>
-                  <p>'1'</p>
-                  <p>'2'</p>
-                  <p>'3'</p>
+                <div className='reservation-info'>
+                  <h4>Room facilities</h4>
+                  <p>Smartboard</p>
+                  <p>Whiteboard</p>
+                  <p>Outlets and extension cords</p>
                 </div>
 
-                <div>
+                <div className='reservation-info date'>
 
-                  <h4>Dato</h4>
-                  <p>'valgte dato'</p>
-
-                </div>
-
-                <div>
-
-                  <h4>Tidspunkt</h4>
-                  <p>'valgte tidspunkt'</p>
+                  <h4>Date</h4>
+                  <p>*valgte dato*</p>
 
                 </div>
 
-                <div>
+                <div className='reservation-info'>
 
-                  <h4>Antal personer</h4>
-                  <p>'antal personer'</p>
+                  <h4>Timeslot</h4>
+                  <p>12:00 - 16:30</p>
 
                 </div>
+
+                <div className='reservation-info'>
+
+                  <h4>Attendants</h4>
+                  <p>4</p>
+
+                </div>
+
+                <Button size='md' color='var(--cphYellow)'>Confirm reservation</Button>
 
               </div>
 
