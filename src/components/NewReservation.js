@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { DatePicker } from '@mantine/dates';
 import { useDisclosure } from '@mantine/hooks';
 import 'dayjs/locale/en';
+import useMyContext from '@/context/my-context';
 
 
 const times = ['8:00', '9:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00'];
@@ -13,6 +14,8 @@ const hours = ['1 hour', '2 hours', '3 hours', '4 hours']
 
 
 export function NewReservation() {
+
+  const contextValue = useMyContext();
 
   const [value, setValue] = useState(new Date());
   const [opened, { open, close }] = useDisclosure(false);
@@ -68,54 +71,54 @@ export function NewReservation() {
           <Grid.Col className='nr-grid' span={4}>
             <div className='nr-modal-div'>
               <Title className='modal-title'>Time</Title>
-                {/* Combobox 1 */}
+              {/* Combobox 1 */}
               <Combobox
-      store={combobox}
-      onOptionSubmit={(val) => {
-        timeSetValue(val);
-        combobox.closeDropdown();
-      }}
-    >
-      <Combobox.Target>
-        <InputBase
-          component="button"
-          pointer
-          rightSection={<Combobox.Chevron />}
-          onClick={() => combobox.toggleDropdown()}
-        >
-          {timeValue || <Input.Placeholder>Pick value</Input.Placeholder>}
-        </InputBase>
-      </Combobox.Target>
+                store={combobox}
+                onOptionSubmit={(val) => {
+                  timeSetValue(val);
+                  combobox.closeDropdown();
+                }}
+              >
+                <Combobox.Target>
+                  <InputBase
+                    component="button"
+                    pointer
+                    rightSection={<Combobox.Chevron />}
+                    onClick={() => combobox.toggleDropdown()}
+                  >
+                    {timeValue || <Input.Placeholder>Pick value</Input.Placeholder>}
+                  </InputBase>
+                </Combobox.Target>
 
-      <Combobox.Dropdown>
-        <Combobox.Options>{options}</Combobox.Options>
-      </Combobox.Dropdown>
-    </Combobox>
+                <Combobox.Dropdown>
+                  <Combobox.Options>{options}</Combobox.Options>
+                </Combobox.Dropdown>
+              </Combobox>
 
-      {/* Combobox 2 */}
-    <Combobox
-      store={secondCombobox}
-      onOptionSubmit={(val) => {
-        secondTimeSetValue(val);
-        secondCombobox.closeDropdown();
-      }}
-    >
-      <Combobox.Target className="combobox-start">
-        <InputBase
-          component="button"
-          pointer
-          rightSection={<Combobox.Chevron />}
-          onClick={() => secondCombobox.toggleDropdown()}
-        >
-          {secondTimeValue || <Input.Placeholder>Pick value</Input.Placeholder>}
-        </InputBase>
-      </Combobox.Target>
+              {/* Combobox 2 */}
+              <Combobox
+                store={secondCombobox}
+                onOptionSubmit={(val) => {
+                  secondTimeSetValue(val);
+                  secondCombobox.closeDropdown();
+                }}
+              >
+                <Combobox.Target className="combobox-start">
+                  <InputBase
+                    component="button"
+                    pointer
+                    rightSection={<Combobox.Chevron />}
+                    onClick={() => secondCombobox.toggleDropdown()}
+                  >
+                    {secondTimeValue || <Input.Placeholder>Pick value</Input.Placeholder>}
+                  </InputBase>
+                </Combobox.Target>
 
-      <Combobox.Dropdown>
-        <Combobox.Options>{secondOptions}</Combobox.Options>
-      </Combobox.Dropdown>
-    </Combobox>
-              
+                <Combobox.Dropdown>
+                  <Combobox.Options>{secondOptions}</Combobox.Options>
+                </Combobox.Dropdown>
+              </Combobox>
+
             </div>
 
           </Grid.Col>
