@@ -474,3 +474,57 @@ html {
 .classroom-facilities {
     
 }
+
+/*
+!=========================================
+!=========================================
+!=========================================
+!========== Reservation Complete =========
+!=========================================
+!=========================================
+!=========================================
+*/
+
+.rc-title {
+  color: #676767;
+}
+
+.rc-paper {
+  width: 500px !important;
+  
+}
+
+.rc-paper-div {
+  justify-content: center;
+  display: flex;
+}
+
+.rc-info-title {
+  font-size: 16px !important;
+  padding-top: 20px;
+}
+
+.rc-facilities-text {
+  padding-top: 14px !important;
+  font-size: 12px !important;
+}
+
+.rc-facilities-elements {
+  display: flex;
+  justify-content: space-between;
+}
+
+.rc-button {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+.rc-button-style {
+  width: 300px !important;
+}
+
+.rc-text-reciept {
+  padding-top: 10px !important;
+  color: #9c9c9c !important;
+}
