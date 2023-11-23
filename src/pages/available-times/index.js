@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Grid, GridCol } from '@mantine/core'
 import Image from 'next/image'
 import sideImg from '../../assets/sidebar-background.png'
+import classroom from '../../assets/classroom.png'
 
 // Icons
 import { FaEdit } from "react-icons/fa";
@@ -107,15 +108,21 @@ const availableTimes = () => {
                     <div className='classrooms'>
                       {ClassRooms.map(ClassRooms => (
                         <div>
-                          
-                          <p> {ClassRooms.roomnumber} </p>
+                          <Image
+                            src={classroom}
+                          />
+                          <p className='classroom-number'>
+                            {ClassRooms.roomnumber}
+                          </p>
+                          <p className='classroom-facilities'>
+                            {ClassRooms.facilities}
+                          </p>
                         </div>
                       ))}
                     </div>
                   )}
 
                 </div>
-
               </div>
 
               {/* Booking Info */}
