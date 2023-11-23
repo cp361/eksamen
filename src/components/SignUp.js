@@ -128,8 +128,6 @@ const SignUpForm = () => {
             </Anchor>
           </Text>
         </div>
-      </Container>
-    </div>
   );
 };
 
