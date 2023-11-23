@@ -28,7 +28,7 @@ export function AuthenticationForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      setLoading(true);
+      // setLoading(true);
       const { user, session, error } = await supabase.auth.signInWithPassword({
         email,
         password,
@@ -37,9 +37,10 @@ export function AuthenticationForm() {
       router.replace("/home");
     } catch (error) {
       alert(error.message);
-    } finally {
-      setLoading(false);
-    }
+    } 
+    // finally {
+    //   setLoading(false);
+    // }
   };
 
   return (

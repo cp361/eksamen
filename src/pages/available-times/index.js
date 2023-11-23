@@ -15,7 +15,7 @@ const availableTimes = () => {
   //   const data = await fetch('https://thpmdxhnvymghwxjnqko.supabase.co/rest/v1/classrooms', {
   //     headers: {
   //       apikey: anonKey,
-  //       Authorization: 'Bearer' `${anonKey}`,
+  //       Authorization:  `Bearer ${anonKey}`,
   //     }
   //   }).then(response => response.json())
 
