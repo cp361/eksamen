@@ -20,7 +20,6 @@ import { createClient } from "@supabase/supabase-js";
 import { useFavicon } from "@mantine/hooks";
 import { useRouter } from "next/router";
 //Loading funktion//
-import setLoading from "@/pages/testingenviorement/loader";
 
 export function AuthenticationForm() {
   const [email, setEmail] = useState("");
