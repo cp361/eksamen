@@ -41,15 +41,6 @@ const SignUpForm = () => {
             </div>
           </Center>
 
-                    <Center>
-                        <div className="logo">
-                            <span className="logo-left"></span>
-                            <span className="logo-right"></span>
-                            <span className="logo-top"></span>
-                            <span className="logo-bottom"></span>
-                        </div>
-                    </Center>
-
                     {/* CPH Business teksten */}
                     <p className="logo-text">
                         <span className="logo-first-text">cph</span>business
@@ -95,38 +86,7 @@ const SignUpForm = () => {
                 </div>
             </Container>
 
-          <Title ta="center" mt={20} mb={40} className={classes.title}>
-            Create Account
-          </Title>
-          <form onSubmit={handleSubmit} className="form">
-            <label>Email</label>
-            <input
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="cph-xxYYY@cphbusiness.dk"
-              type="email"
-            />
-            <label>Password</label>
-            <input
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              placeholder="Password"
-              type="password"
-            />
-            <button type="submit">Create account</button>
-          </form>
-          <Text
-            c="dimmed"
-            size="sm"
-            ta="center"
-            mt={5}
-            onClick={() => router.push("/")}
-          >
-            Already have an account?
-            <Anchor size="sm" component="button" ml={5}>
-              Login
-            </Anchor>
-          </Text>
+          
         </div>
   );
 };
