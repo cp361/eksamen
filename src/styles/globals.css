@@ -25,6 +25,12 @@ html {
   justify-content: center;
   align-items: center;
 }
+.bg-home {
+  background-color: var(--cphBlue);
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
 .m-96bdd299 {
   padding: 0 !important;
 }
@@ -124,6 +130,7 @@ html {
 }
 .right-bg {
   background-color: white !important;
+  height: 800px;
 }
 
 /*

@@ -11,11 +11,11 @@ import Image from 'next/image'
 export default function newReservation() {
   return (
     <PageWrapper>
-    <div className='bg'>
+    <div className='bg-home'>
 
-      <Grid>
+      <Grid className='grid-home'>
 
-        <GridCol span='auto' w={94} h={900}>
+        <GridCol span='auto' w={94} h={800}>
 
           <Image 
           src={sideImg}
@@ -24,7 +24,7 @@ export default function newReservation() {
 
         </GridCol>
 
-        <GridCol span='auto' className='right-bg'>
+        <GridCol span='auto'  className='right-bg'>
 
           <Profile />
           <UpcomingReservation />
