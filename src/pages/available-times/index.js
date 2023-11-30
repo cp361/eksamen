@@ -8,6 +8,8 @@ import { FaEdit } from "react-icons/fa";
 import { FaReceipt } from "react-icons/fa";
 import { FaRegCalendarAlt } from "react-icons/fa";
 
+import useMyContext from '@/context/my-context';
+
 
 import { supabase } from '../lib/helper/supabaseClient';
 import { DatePicker } from '@mantine/dates';
@@ -15,12 +17,14 @@ import '@mantine/dates/styles.css';
 import { useRouter } from 'next/router';
 import ClassRoomCard from '@/components/ClassRooms'
 import { Profile } from '@/components/Profile';
+import ChosenDate from '@/components/ChosenDate';
 
 const availableTimes = () => {
 
+  const { date } = useMyContext();
+
   const router = useRouter();
 
-  const [value, setValue] = useState(new Date());
 
   const [fetchError, setFetchError] = useState(null);
   const [ClassRooms, setClassRooms] = useState(null);
@@ -106,15 +110,7 @@ const availableTimes = () => {
                 </div>
 
                 <div className='labels'>
-                  <label for="date">Date</label>
-                  <DatePicker className='nr-datepicker'
-                    value={value}
-                    onChange={setValue}
-                    locale='en'
-                    excludeDate={(date) => date.getDay() === 0 || date.getDay() === 6}
-                    hideOutsideDates
-                    minDate={new Date()}
-                  />
+                  <ChosenDate />
                 </div>
 
               </div>

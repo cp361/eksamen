@@ -7,6 +7,7 @@ import { useDisclosure } from '@mantine/hooks';
 import 'dayjs/locale/en';
 import useMyContext from '@/context/my-context';
 import { useRouter } from 'next/router';
+import Date from './DatePicker';
 
 
 const times = ['8:00', '9:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00'];
@@ -21,7 +22,7 @@ export function NewReservation() {
   const contextValue = useMyContext();
 
   const [value, setValue] = useState(new Date());
-  const [opened, { open, close }] = useDisclosure(false);
+  // const [opened, { open, close }] = useDisclosure(false);
 
   const [timeValue, timeSetValue] = useState(null);
   const [secondTimeValue, secondTimeSetValue] = useState(null);
@@ -55,17 +56,8 @@ export function NewReservation() {
           {/* VÆLGER DATO */}
 
           <Grid.Col className='nr-grid' span={4}>
-            <div className='nr-datepicker-div'>
-              <Title className='date-title'>Date</Title>
-              <DatePicker className='nr-datepicker'
-                value={value}
-                onChange={setValue}
-                locale='en'
-                excludeDate={(date) => date.getDay() === 0 || date.getDay() === 6}
-                hideOutsideDates
-                minDate={new Date()}
-              />
-            </div>
+            
+            <Date />
 
           </Grid.Col>
 

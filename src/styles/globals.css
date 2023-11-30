@@ -37,6 +37,8 @@ html {
   display: grid;
   justify-content: center;
   align-items: center;
+
+  height: 100dvh;
 }
 .m-96bdd299 {
   padding: 0 !important;
@@ -288,6 +290,23 @@ label {
   width: 100%;
   padding-top: 40px;
   padding-bottom: 40px;
+}
+
+.date-title {
+  padding-bottom: 30px;
+  color: var(--textColor2);
+  font-size: 1.5rem !important;
+}
+
+.nr-date-div {
+  padding-left: 60px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.todayDate input {
+  color: var(--textColor);
+  border: 1px solid lightgray;
 }
 
 .nr-datepicker {
