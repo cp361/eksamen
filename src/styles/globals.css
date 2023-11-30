@@ -25,6 +25,13 @@ html {
   justify-content: center;
   align-items: center;
 }
+.bg-available-times {
+  background-color: var(--cphBlue);
+  min-height: 120dvh;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
 .bg-home {
   background-color: var(--cphBlue);
   display: grid;
@@ -151,10 +158,6 @@ html {
 .__m__-R1bem {
   --grid-gutter: none!important;
 }
-
-.m-410352e9 {
-  /* overflow: visible !important; */
-}
 .booking {
   display: flex;
   height: 100dvh !important;
@@ -167,7 +170,6 @@ html {
   display: flex;
   justify-content: center;
   background-image: url("../assets/sidebar-background.png");
-  height: 90vh;
 }
 .sidebar > * {
   margin-top: 20px;
@@ -184,7 +186,6 @@ html {
 
 .booking-flow {
   background-color: white;
-  height: 90%;
 }
 .booking-flow-timeline1 {
   height: 5px;
@@ -256,6 +257,8 @@ label {
   margin-top: -40px;
   padding-inline: 30px;
   padding-bottom: 10px;
+
+  max-width: 1000px;
 }
 .new-reservation p {
   color: var(--textColor);

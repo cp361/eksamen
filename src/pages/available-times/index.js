@@ -31,7 +31,7 @@ const availableTimes = () => {
       const { data, error } = await supabase
         .from('classrooms')
         .select('')
-        .limit(1)
+        .limit(2)
 
       if (error) {
         setFetchError('Could not fetch class rooms')
@@ -50,7 +50,7 @@ const availableTimes = () => {
 
   return (
 
-    <div className="booking div-text bg">
+    <div className="booking div-text bg-available-times">
 
       {/* Booking Flow */}
       <Grid span='auto' className='booking-flow'>
@@ -74,7 +74,7 @@ const availableTimes = () => {
 
 
             {/* Booking Flow */}
-            <div className='booking-flow-icons' span='auto'>
+            <div className='booking-flow-icons'>
 
               <span className='booking-flow-timeline1'></span>
 
