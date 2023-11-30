@@ -18,10 +18,13 @@ import { useRouter } from 'next/router';
 import ClassRoomCard from '@/components/ClassRooms'
 import { Profile } from '@/components/Profile';
 import ChosenDate from '@/components/ChosenDate';
+import ChosenTime from '@/components/ChosenTime';
+import ChosenAttendants from '@/components/ChosenAttendants';
 
 const availableTimes = () => {
 
   const { date } = useMyContext();
+  const { time } = useMyContext();
 
   const router = useRouter();
 
@@ -99,17 +102,15 @@ const availableTimes = () => {
 
                 <h3>Your booking</h3>
 
-                <div className='labels'>
-                  <label for="attendants">Attendants</label>
-                  <input type="number" id='attendants' name='attendants' placeholder='4'></input>
+                <div className='labels reservation-info-titles'>
+                  <ChosenAttendants />
                 </div>
 
-                <div className='labels'>
-                  <label for="time">Preffered time</label>
-                  <input type="time" id='time' name='time' placeholder='12:00 - 16:300'></input>
+                <div className='labels reservation-info-titles'>
+                  <ChosenTime />
                 </div>
 
-                <div className='labels'>
+                <div className='labels reservation-info-titles'>
                   <ChosenDate />
                 </div>
 
@@ -141,31 +142,28 @@ const availableTimes = () => {
 
                 <h3>CL - 209</h3>
 
-                <div className='reservation-info'>
+                <div className='reservation-info reservation-info-titles'>
                   <h4>Room facilities</h4>
                   <p>Smartboard</p>
                   <p>Whiteboard</p>
                   <p>Outlets and extension cords</p>
                 </div>
 
-                <div className='reservation-info date'>
+                <div className='reservation-info reservation-info-titles '>
 
-                  <h4>Date</h4>
-                  <p>*valgte dato*</p>
-
-                </div>
-
-                <div className='reservation-info'>
-
-                  <h4>Timeslot</h4>
-                  <p>12:00 - 16:30</p>
+                  <ChosenDate />
 
                 </div>
 
-                <div className='reservation-info'>
+                <div className='reservation-info reservation-info-titles'>
 
-                  <h4>Attendants</h4>
-                  <p>4</p>
+                  <ChosenTime />
+
+                </div>
+
+                <div className='reservation-info reservation-info-titles'>
+
+                  <ChosenAttendants />
 
                 </div>
 

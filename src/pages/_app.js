@@ -9,10 +9,16 @@ import { useState } from "react";
 export default function App({ Component, pageProps }) {
 
   const [date, setDate] = useState('');
+  const [time, setTime] = useState('');
+  const [attendants, setAttendants] = useState('');
 
   const contextValue = {
     date,
     setDate,
+    time,
+    setTime,
+    attendants,
+    setAttendants,
   };
 
   return (

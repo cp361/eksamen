@@ -8,44 +8,15 @@ import 'dayjs/locale/en';
 import useMyContext from '@/context/my-context';
 import { useRouter } from 'next/router';
 import Date from './DatePicker';
+import ChooseTime from './ChooseTime';
+import ChooseAttendants from './ChooseAttendants';
 
 
-const times = ['8:00', '9:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00'];
-
-const hours = ['1 hour', '2 hours', '3 hours', '4 hours']
 
 
 export function NewReservation() {
 
   const router = useRouter();
-
-  const contextValue = useMyContext();
-
-  const [value, setValue] = useState(new Date());
-  // const [opened, { open, close }] = useDisclosure(false);
-
-  const [timeValue, timeSetValue] = useState(null);
-  const [secondTimeValue, secondTimeSetValue] = useState(null);
-
-  const combobox = useCombobox({
-    onDropdownClose: () => combobox.resetSelectedOption(),
-  });
-
-  const secondCombobox = useCombobox({
-    onDropdownClose: () => combobox.resetSelectedOption(),
-  });
-
-  const options = times.map((item) => (
-    <Combobox.Option value={item} key={item}>
-      {item}
-    </Combobox.Option>
-  ));
-
-  const secondOptions = hours.map((item) => (
-    <Combobox.Option value={item} key={item}>
-      {item}
-    </Combobox.Option>
-  ));
 
   return (
     <>
@@ -66,53 +37,8 @@ export function NewReservation() {
           <Grid.Col className='nr-grid' span={4}>
             <div className='nr-modal-div'>
               <Title className='modal-title'>Time</Title>
-              {/* Combobox 1 */}
-              <Combobox
-                store={combobox}
-                onOptionSubmit={(val) => {
-                  timeSetValue(val);
-                  combobox.closeDropdown();
-                }}
-              >
-                <Combobox.Target>
-                  <InputBase
-                    component="button"
-                    pointer
-                    rightSection={<Combobox.Chevron />}
-                    onClick={() => combobox.toggleDropdown()}
-                  >
-                    {timeValue || <Input.Placeholder>Pick value</Input.Placeholder>}
-                  </InputBase>
-                </Combobox.Target>
-
-                <Combobox.Dropdown>
-                  <Combobox.Options>{options}</Combobox.Options>
-                </Combobox.Dropdown>
-              </Combobox>
-
-              {/* Combobox 2 */}
-              <Combobox
-                store={secondCombobox}
-                onOptionSubmit={(val) => {
-                  secondTimeSetValue(val);
-                  secondCombobox.closeDropdown();
-                }}
-              >
-                <Combobox.Target className="combobox-start">
-                  <InputBase
-                    component="button"
-                    pointer
-                    rightSection={<Combobox.Chevron />}
-                    onClick={() => secondCombobox.toggleDropdown()}
-                  >
-                    {secondTimeValue || <Input.Placeholder>Pick value</Input.Placeholder>}
-                  </InputBase>
-                </Combobox.Target>
-
-                <Combobox.Dropdown>
-                  <Combobox.Options>{secondOptions}</Combobox.Options>
-                </Combobox.Dropdown>
-              </Combobox>
+              
+              <ChooseTime />
 
             </div>
 
@@ -124,11 +50,7 @@ export function NewReservation() {
 
             <div className='nr-numberinput-div'>
               <Title className='numberinput-title'>Attendants</Title>
-              <NumberInput className='nr-numberinput'
-                label="Attendants"
-                placeholder="0"
-                allowNegative={false}
-              />
+              <ChooseAttendants />
               <div className='nr-button-div'>
                 <Button onClick={() => router.push("/available-times")} size='md' fullWidth color='var(--cphYellow)' className='nr-button'>Next</Button>
               </div>

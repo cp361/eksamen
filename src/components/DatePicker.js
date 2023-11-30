@@ -1,7 +1,4 @@
-import React, { useState } from "react";
-import useMyContext from "@/context/my-context";
-import Link from "next/link";
-import { DatePicker } from "@mantine/dates";
+import React from "react";
 import CurrentDate from "./todayDate";
 import { Title } from "@mantine/core";
 

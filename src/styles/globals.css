@@ -266,12 +266,11 @@ label {
   color: var(--textColor);
 }
 .reservation-info {
-  line-height: 0.3rem;
   padding-bottom: 20px;
 }
-.date {
-  margin-top: -30px;
-  margin-bottom: -20px;
+.reservation-info-titles {
+  color: var(--textColor2);
+  font-weight: 700;
 }
 
 /*

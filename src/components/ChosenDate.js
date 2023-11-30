@@ -3,7 +3,7 @@ import useMyContext from "@/context/my-context";
 
 const ChosenDate = () => {
     const { date } = useMyContext();
-    return <div>Date: {date}</div>;
+    return <div>Date <br/> {date}</div>;
 }
 
 export default ChosenDate
