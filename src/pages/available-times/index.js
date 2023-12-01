@@ -67,7 +67,7 @@ const availableTimes = () => {
           <div className='profile-sidebar'>
             {/* <Profile /> */}
           </div>
-          <Button className='back-button' onClick={() => router.push("/home")} size='md' color='var(--cphYellowHover)'>Back</Button>
+          <Button className='back-button' onClick={() => router.push("/home")} size='md' color='var(--textColor2)'>Back</Button>
         </div>
         <Grid>
 
