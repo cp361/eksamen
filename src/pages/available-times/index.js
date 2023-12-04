@@ -34,7 +34,6 @@ const availableTimes = () => {
       const { data, error } = await supabase
         .from("classrooms")
         .select("")
-        .limit(2);
 
       if (error) {
         setFetchError("Could not fetch class rooms");
