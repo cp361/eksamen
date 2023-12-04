@@ -32,14 +32,9 @@ const availableTimes = () => {
   useEffect(() => {
     const fetchClassRooms = async () => {
       const { data, error } = await supabase
-<<<<<<< Updated upstream
         .from("classrooms")
         .select("")
         .limit(2);
-=======
-        .from('classrooms')
-        .select('')
->>>>>>> Stashed changes
 
       if (error) {
         setFetchError("Could not fetch class rooms");
