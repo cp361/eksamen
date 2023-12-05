@@ -358,6 +358,8 @@ label {
 .numberinput-title {
   color: var(--textColor2);
   font-size: 1.5rem !important;
+  padding-top: 20px;
+  padding-bottom: 30px;
 }
 
 .nr-button-div {

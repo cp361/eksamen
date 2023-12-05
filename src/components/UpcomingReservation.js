@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Button, Title, Grid, } from '@mantine/core';
-
+import { cancelAlert } from './CancelAlert';
 
 
 
@@ -24,7 +24,7 @@ export function UpcomingReservation() {
             
           </div>
             <div className='ur-button'>
-              <Button color='var(--cphYellow)'>Cancel</Button>
+              <Button onClick={cancelAlert} color='var(--cphYellow)'>Cancel</Button>
             </div>
             
             
@@ -43,7 +43,7 @@ export function UpcomingReservation() {
             
           </div>
           <div className='ur-button'>
-            <Button color='var(--cphYellow)'>Cancel</Button>
+            <Button onClick={cancelAlert} color='var(--cphYellow)'>Cancel</Button>
           </div>
          
         </Grid.Col>
@@ -60,7 +60,7 @@ export function UpcomingReservation() {
             
           </div>
           <div className='ur-button'>
-            <Button color='var(--cphYellow)'>Cancel</Button>
+            <Button onClick={cancelAlert} color='var(--cphYellow)'>Cancel</Button>
           </div>
           
         </Grid.Col>

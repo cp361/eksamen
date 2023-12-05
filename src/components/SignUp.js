@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import { Center, Title } from "@mantine/core";
 import { Container, Anchor, Text } from "@mantine/core";
 import classes from "../styles/AuthenticationTitle.module.css";
+import { emailRecieved } from "./EmailAlert.js";
 
 const SignUpForm = () => {
   const [email, setEmail] = useState("");
@@ -81,7 +82,7 @@ const SignUpForm = () => {
                             placeholder="Your password"
                             type="password"
                         />
-                        <button type="submit">Create account</button>
+                        <button onClick={emailRecieved} type="submit">Create account</button>
                     </form>
                 </div>
             </Container>
