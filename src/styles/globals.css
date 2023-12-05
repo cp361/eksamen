@@ -648,6 +648,10 @@ label {
 .classroomgrid {
   display: grid;
   grid-template-columns: repeat(2, 2fr);
+  overflow: auto;
+  width: 100%;
+  height: 400px;
+  padding-right: 10px;
 }
 
 .classroom-card-img {
