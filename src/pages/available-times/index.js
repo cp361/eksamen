@@ -133,7 +133,7 @@ const availableTimes = () => {
               <div className="main-col3">
                 <h3>CL - 209</h3>
 
-                <div className="reservation-info reservation-info-titles">
+                <div className="reservation-info reservation-info-facilities">
                   <h4>Room facilities</h4>
                   <p>Smartboard</p>
                   <p>Whiteboard</p>

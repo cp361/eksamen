@@ -277,6 +277,9 @@ label {
   color: var(--textColor2);
   font-weight: 700;
 }
+.reservation-info-facilities {
+  line-height: .3rem;
+}
 
 /*
 !=========================================
