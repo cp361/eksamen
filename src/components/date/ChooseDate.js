@@ -31,6 +31,8 @@ const CurrentDate = () => {
 
                 {/* <DatePicker
                 allowDeselect
+                hideOutsideDates
+                weekendDays={[0, 6]}
                 value={date}
                 onChange={handleChangeDate}
                 size={'sm'} /> */}
