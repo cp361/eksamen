@@ -12,4 +12,15 @@ const supabaseClient = () => {
   )
 }
 
+// exports.handler = async event => {
+
+//     const { data, error } = await supabase
+//         .from('X')
+//         .insert([
+//             { note: 'X' },
+//         ]);
+
+//   console.log(data, error);
+// 			}
+
 export default supabaseClient
