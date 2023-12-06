@@ -52,7 +52,7 @@ export function NewReservation() {
               <Title className='numberinput-title'>Attendants</Title>
               <div className='choose-attendants'><ChooseAttendants /></div>
               <div className='nr-button-div'>
-                <Button onClick={() => router.push("/available-times")} size='md' fullWidth color='var(--cphYellow)' className='nr-button'>Next</Button>
+                <Button onClick={() => router.push("/choose-classroom")} size='md' fullWidth color='var(--cphYellow)' className='nr-button'>Next</Button>
               </div>
             </div>
           </Grid.Col>

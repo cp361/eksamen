@@ -19,8 +19,40 @@ import { Profile } from "@/components/auth/Profile";
 import ChosenDate from "@/components/date/ChosenDate";
 import ChosenTime from "@/components/time/ChosenTime";
 import ChosenAttendants from "@/components/attendants/ChosenAttendants";
+import { Reservations } from "@/entities/reservations";
 
 const availableTimes = () => {
+
+  //! Prøvede at få post til at virke
+  // const { date, time, attendants, roomnumber } = useMyContext();
+  // const [reservations, setNewReservation] = useState([]);
+
+  // const handleAddReservation = () => {
+
+    
+  //   const c = new Reservations(roomnumber, date, time, attendants);
+  //   addNewReservation(c)
+  // };
+
+  // const addNewReservation = async (reservation) => {
+  //   const anonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRocG1keGhudnltZ2h3eGpucWtvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDA1MTA2MzYsImV4cCI6MjAxNjA4NjYzNn0.iSvURo8-6F-ns9QmFtEnuBE0pvQdHw6vf2VaMUAVQz0'
+  //   fetch('https://thpmdxhnvymghwxjnqko.supabase.co/rest/v1/reservations', {
+  //     method: 'POST',
+  //     body: JSON.stringify(reservation),
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //       apikey: anonKey,
+  //       Authorization: `Bearer ${anonKey}`,
+  //       'Prefer': 'return=minimal',
+  //     }
+  //   }).then(response => response.json())
+  //     .then(addNewReservation => {
+  //       setNewReservation([...reservations, addNewReservation[1]]);
+
+
+  //     })
+  // }
+
 
   const router = useRouter();
 
@@ -150,6 +182,7 @@ const availableTimes = () => {
                 </div>
 
                 <Button
+                  // onClick={handleAddReservation}
                   onClick={() => router.push("/complete")}
                   size="md"
                   color="var(--cphYellow)"
