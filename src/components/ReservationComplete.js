@@ -7,9 +7,9 @@ import { FaRegCalendarAlt, FaTv } from "react-icons/fa";
 import Image from 'next/image';
 import classroomimg from '../assets/classroom-img.png'
 import { useRouter } from 'next/router';
-import ChosenDate from './ChosenDate';
-import ChosenTime from './ChosenTime';
-import ChosenAttendants from './ChosenAttendants';
+import ChosenDate from './date/ChosenDate';
+import ChosenTime from './time/ChosenTime';
+import ChosenAttendants from './attendants/ChosenAttendants';
 
 
 

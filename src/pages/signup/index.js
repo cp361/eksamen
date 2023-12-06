@@ -5,7 +5,7 @@ import { useRouter } from "next/router"
 import { Grid, GridCol } from '@mantine/core'
 import Image from 'next/image'
 import sideImg from '../../assets/home-background.png'
-import SignUpForm from "@/components/SignUp";
+import SignUpForm from "@/components/auth/SignUp";
 import { PageWrapper } from "@/pagewrapper";
 
 const Signup = () => {

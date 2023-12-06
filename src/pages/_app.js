@@ -4,6 +4,7 @@ import { MantineProvider } from "@mantine/core";
 
 import { MyContext } from "@/context/my-context";
 import { useState } from "react";
+import { DateProvider } from "@/context/date-context";
 
 
 export default function App({ Component, pageProps }) {
@@ -27,7 +28,9 @@ export default function App({ Component, pageProps }) {
   return (
     <MyContext.Provider value={contextValue}>
       <MantineProvider>
-        <Component {...pageProps} />
+        <DateProvider>
+          <Component {...pageProps} />
+        </DateProvider>
       </MantineProvider>
     </MyContext.Provider>
   );

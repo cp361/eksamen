@@ -1,6 +1,6 @@
 import React from 'react'
 
-import classroomimg from '../assets/classroom-img.png'
+import classroomimg from '../../assets/classroom-img.png'
 import Image from 'next/image'
 import { Button } from '@mantine/core'
 import { FaChalkboardTeacher, FaPlug, FaTv } from 'react-icons/fa'

@@ -14,16 +14,13 @@ import { supabase } from "../lib/helper/supabaseClient";
 import { DatePicker } from "@mantine/dates";
 import "@mantine/dates/styles.css";
 import { useRouter } from "next/router";
-import ClassRoomCard from "@/components/ClassRooms";
-import { Profile } from "@/components/Profile";
-import ChosenDate from "@/components/ChosenDate";
-import ChosenTime from "@/components/ChosenTime";
-import ChosenAttendants from "@/components/ChosenAttendants";
+import ClassRoomCard from "@/components/classroom/ClassRooms";
+import { Profile } from "@/components/auth/Profile";
+import ChosenDate from "@/components/date/ChosenDate";
+import ChosenTime from "@/components/time/ChosenTime";
+import ChosenAttendants from "@/components/attendants/ChosenAttendants";
 
 const availableTimes = () => {
-  const { date } = useMyContext();
-  const { timeStart } = useMyContext();
-  const { timeEnd } = useMyContext();
 
   const router = useRouter();
 

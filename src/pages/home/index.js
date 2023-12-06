@@ -1,7 +1,7 @@
 import React from 'react';
 import { NewReservation } from '@/components/NewReservation'
 import { UpcomingReservation } from '@/components/UpcomingReservation';
-import { Profile } from '@/components/Profile';
+import { Profile } from '@/components/auth/Profile';
 import { PageWrapper } from '@/pagewrapper';
 import { Grid, GridCol } from '@mantine/core';
 import sideImg from '../../assets/sidebar-background.png'
