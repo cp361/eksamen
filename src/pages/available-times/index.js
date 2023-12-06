@@ -22,7 +22,8 @@ import ChosenAttendants from "@/components/ChosenAttendants";
 
 const availableTimes = () => {
   const { date } = useMyContext();
-  const { time } = useMyContext();
+  const { timeStart } = useMyContext();
+  const { timeEnd } = useMyContext();
 
   const router = useRouter();
 
@@ -34,7 +35,6 @@ const availableTimes = () => {
       const { data, error } = await supabase
         .from("classrooms")
         .select("")
-        .limit(4);
 
       if (error) {
         setFetchError("Could not fetch class rooms");
@@ -61,7 +61,7 @@ const availableTimes = () => {
             className="back-button"
             onClick={() => router.push("/home")}
             size="md"
-            color="var(--textColor2)"
+            color="var(--cphBlue)"
           >
             Back
           </Button>
@@ -69,7 +69,7 @@ const availableTimes = () => {
         <Grid>
           {/* Site Title */}
           <div className="new-reservation">
-            <h1>New Reservation</h1>
+            <h1>Choose Classroom</h1>
 
             {/* Booking Flow */}
             <div className="booking-flow-icons">
@@ -100,15 +100,15 @@ const availableTimes = () => {
                 <h3>Your booking</h3>
 
                 <div className="labels reservation-info-titles">
-                  <ChosenAttendants />
-                </div>
-
-                <div className="labels reservation-info-titles">
                   <ChosenTime />
                 </div>
 
                 <div className="labels reservation-info-titles">
                   <ChosenDate />
+                </div>
+
+                <div className="labels reservation-info-titles">
+                  <ChosenAttendants />
                 </div>
               </div>
 

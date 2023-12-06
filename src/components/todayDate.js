@@ -10,7 +10,7 @@ const CurrentDate = () => {
     const contextValue = useMyContext();
 
     var curr = new Date();
-    curr.setDate(curr.getDate() + 3);
+    curr.setDate(curr.getDate());
     var date = curr.toISOString().substring(0, 10);
 
     function handleChange(event) {

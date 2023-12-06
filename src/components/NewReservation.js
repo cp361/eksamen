@@ -50,7 +50,7 @@ export function NewReservation() {
 
             <div className='nr-numberinput-div'>
               <Title className='numberinput-title'>Attendants</Title>
-              <ChooseAttendants />
+              <div className='choose-attendants'><ChooseAttendants /></div>
               <div className='nr-button-div'>
                 <Button onClick={() => router.push("/available-times")} size='md' fullWidth color='var(--cphYellow)' className='nr-button'>Next</Button>
               </div>

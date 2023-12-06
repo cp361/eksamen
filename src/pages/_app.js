@@ -9,14 +9,17 @@ import { useState } from "react";
 export default function App({ Component, pageProps }) {
 
   const [date, setDate] = useState('');
-  const [time, setTime] = useState('');
+  const [timeStart, setTimeStart] = useState('');
+  const [timeEnd, setTimeEnd] = useState('');
   const [attendants, setAttendants] = useState('');
 
   const contextValue = {
     date,
     setDate,
-    time,
-    setTime,
+    timeStart,
+    timeEnd,
+    setTimeStart,
+    setTimeEnd,
     attendants,
     setAttendants,
   };

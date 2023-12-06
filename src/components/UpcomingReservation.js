@@ -56,7 +56,7 @@ export function UpcomingReservation() {
             </div>
             <div className="ur-thisweek-info">
               <Title order={4} className="ur-thisweek-title">
-                CL-201
+                CL-209
               </Title>
               <p>Kl. 8:00 - 12:00</p>
               <p>2 Students</p>

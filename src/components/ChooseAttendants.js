@@ -15,8 +15,8 @@ const ChooseAttendants = () => {
     
     
     return (
-        <div>
-            <input type='number' value={contextValue.attendants} onChange={handleChange}></input>
+        <div className='attendants'>
+            <input type='number' placeholder='0' value={contextValue.attendants} onChange={handleChange}></input>
         </div>
     )
 }

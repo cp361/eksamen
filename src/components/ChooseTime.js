@@ -6,96 +6,29 @@ import { useDisclosure } from '@mantine/hooks';
 import '@mantine/dates/styles.css';
 
 
-const times = ['8:00', '9:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00'];
-
-const hours = ['1 hour', '2 hours', '3 hours', '4 hours']
-
 const ChooseTime = () => {
 
 
-    const [timeValue, timeSetValue] = useState(null);
-    const [secondTimeValue, secondTimeSetValue] = useState(null);
-
-    const combobox = useCombobox({
-        onDropdownClose: () => combobox.resetSelectedOption(),
-    });
-
-    const secondCombobox = useCombobox({
-        onDropdownClose: () => combobox.resetSelectedOption(),
-    });
-
-    const options = times.map((item) => (
-        <Combobox.Option value={item} key={item}>
-            {item}
-        </Combobox.Option>
-    ));
-
-    const secondOptions = hours.map((item) => (
-        <Combobox.Option value={item} key={item}>
-            {item}
-        </Combobox.Option>
-    ));
+    
 
     const contextValue = useMyContext();
 
 
-    function handleChange(event) {
-        contextValue.setTime(event.target.value);
+    function handleChangeStart(event) {
+        contextValue.setTimeStart(event.target.value);
+    }
+    function handleChangeEnd(event) {
+        contextValue.setTimeEnd(event.target.value);
     }
 
 
     return (
         <div className='todayDate'>
-            {/* Combobox 1 */}
-            <Combobox
-                store={combobox}
-                onOptionSubmit={(val) => {
-                    timeSetValue(val);
-                    combobox.closeDropdown();
-                }}
-            >
-                <Combobox.Target>
-                    <InputBase
-                        component="button"
-                        pointer
-                        rightSection={<Combobox.Chevron />}
-                        value={contextValue.time}
-                        onChange={handleChange}
-                        onClick={() => combobox.toggleDropdown()}
-                    >
-                        {timeValue || <Input.Placeholder>Choose start time</Input.Placeholder>}
-                    </InputBase>
-                </Combobox.Target>
+            <label>Reservation start</label>
+            <input type='time' required value={contextValue.timeStart} onChange={handleChangeStart}></input>
 
-                <Combobox.Dropdown>
-                    <Combobox.Options>{options}</Combobox.Options>
-                </Combobox.Dropdown>
-            </Combobox>
-
-            {/* Combobox 2 */}
-            <Combobox
-                store={secondCombobox}
-                onOptionSubmit={(val) => {
-                    secondTimeSetValue(val);
-                    secondCombobox.closeDropdown();
-                }}
-            >
-                <Combobox.Target className="combobox-start">
-                    <InputBase
-                        component="button"
-                        pointer
-                        rightSection={<Combobox.Chevron />}
-                        
-                        onClick={() => secondCombobox.toggleDropdown()}
-                    >
-                        {secondTimeValue || <Input.Placeholder>Choose time period</Input.Placeholder>}
-                    </InputBase>
-                </Combobox.Target>
-
-                <Combobox.Dropdown>
-                    <Combobox.Options>{secondOptions}</Combobox.Options>
-                </Combobox.Dropdown>
-            </Combobox>
+            <label>Reservation end</label>
+            <input type='time' required value={contextValue.timeEnd} onChange={handleChangeEnd}></input>
         </div>
     )
 }

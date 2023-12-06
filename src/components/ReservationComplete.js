@@ -7,6 +7,9 @@ import { FaRegCalendarAlt, FaTv } from "react-icons/fa";
 import Image from 'next/image';
 import classroomimg from '../assets/classroom-img.png'
 import { useRouter } from 'next/router';
+import ChosenDate from './ChosenDate';
+import ChosenTime from './ChosenTime';
+import ChosenAttendants from './ChosenAttendants';
 
 
 
@@ -43,13 +46,10 @@ export function ReservationComplete() {
           <div class="angry-grid">
             <div id="item-0">
               <Title className='rc-info-title'>Room</Title>
-              <Text className='rc-info-text item-0-text'>CL-201</Text>
-              <Title className='rc-info-title'>Date</Title>
-              <Text className='rc-info-text item-0-text'>9. November 2023</Text>
-              <Title className='rc-info-title'>Timeslot</Title>
-              <Text className='rc-info-text item-0-text'>12:00 - 16:30</Text>
-              <Title className='rc-info-title'>Attendants</Title>
-              <Text className='rc-info-text item-0-text'>4</Text>
+              <Text className='rc-info-number item-0-text'>CL-209</Text>
+              <Title className='rc-info-title item-0-text'><ChosenDate /></Title>
+              <Title className='rc-info-title item-0-text'><ChosenTime /></Title>
+              <Title className='rc-info-title item-0-text'><ChosenAttendants /></Title>
             </div>
             <div id="item-2">
               <Image
@@ -58,28 +58,28 @@ export function ReservationComplete() {
               />
             </div>
           </div>
-              <div className='rc-facilities'>
-                <div className='rc-facilities-title'>
-                  <Title className='rc-info-title'>Room facilities</Title>
-                </div>
-                <div className='rc-facilities-elements'>
-                  <div className='rc-facilities-item'>
-                    <Text className='rc-info-text'>Smartboard</Text>
-                    <FaTv color='var(--cphYellow)' size={30}/>
-                  </div>
-                  <div className='rc-facilities-item'>
-                    <Text className='rc-info-text'>Whiteboard</Text>
-                    <FaChalkboardTeacher color='var(--cphYellow)' size={30}/>
-                  </div>
-                  <div className='rc-facilities-item'>
-                    <Text className='rc-info-text'>Outlets and extension cords</Text>
-                    <FaPlug color='var(--cphYellow)' size={30}/>
-                  </div>
-                </div>
+          <div className='rc-facilities'>
+            <div className='rc-facilities-title'>
+              <Title className='rc-info-title'>Room facilities</Title>
+            </div>
+            <div className='rc-facilities-elements'>
+              <div className='rc-facilities-item'>
+                <Text className='rc-info-text'>Smartboard</Text>
+                <FaTv color='var(--cphYellow)' size={30} />
               </div>
+              <div className='rc-facilities-item'>
+                <Text className='rc-info-text'>Whiteboard</Text>
+                <FaChalkboardTeacher color='var(--cphYellow)' size={30} />
+              </div>
+              <div className='rc-facilities-item'>
+                <Text className='rc-info-text'>Outlets and extension cords</Text>
+                <FaPlug color='var(--cphYellow)' size={30} />
+              </div>
+            </div>
+          </div>
 
           <div>
-            <Text className='rc-info-text'>
+            <Text className='rc-info-receipt'>
               You have recieved a reciept of your reservation on your mail
             </Text>
           </div>
