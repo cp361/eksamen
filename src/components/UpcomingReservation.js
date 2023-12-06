@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Button, Title, Grid } from "@mantine/core";
-import { cancelAlert } from "./CancelAlert";
+import { cancelAlert } from "./alert/CancelAlert";
 
 export function UpcomingReservation() {
   return (

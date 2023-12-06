@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { supabase } from "../pages/lib/helper/supabaseClient.js";
+import { supabase } from "../../pages/lib/helper/supabaseClient.js";
 import { useRouter } from "next/router";
 import { Center, Title } from "@mantine/core";
 import { Container, Anchor, Text } from "@mantine/core";
 import classes from "../styles/AuthenticationTitle.module.css";
-import { emailRecieved } from "./EmailAlert.js";
+import { emailRecieved } from "../alert/EmailAlert.js";
 
 const SignUpForm = () => {
   const [email, setEmail] = useState("");

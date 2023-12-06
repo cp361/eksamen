@@ -1,5 +1,5 @@
 import React from "react";
-import CurrentDate from "./todayDate";
+import CurrentDate from "./ChooseDate";
 import { Title } from "@mantine/core";
 
 export default function Date() {

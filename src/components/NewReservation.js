@@ -7,9 +7,9 @@ import { useDisclosure } from '@mantine/hooks';
 import 'dayjs/locale/en';
 import useMyContext from '@/context/my-context';
 import { useRouter } from 'next/router';
-import Date from './DatePicker';
-import ChooseTime from './ChooseTime';
-import ChooseAttendants from './ChooseAttendants';
+import Date from './date/DatePicker';
+import ChooseTime from './time/ChooseTime';
+import ChooseAttendants from './attendants/ChooseAttendants';
 
 
 
