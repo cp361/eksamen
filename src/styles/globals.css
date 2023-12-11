@@ -24,7 +24,24 @@ input[type=time]::-webkit-datetime-edit-ampm-field {
   display: none;
 }
 
+input, select {
+  color: var(--textColor);
+  border: 1px solid lightgray;
+}
+p {
+  color: var(--textColor2);
+  font-size: .8rem;
+}
 
+.time-ptag {
+  margin-top: 2px;
+}
+
+#date {
+  display: block;
+  padding-left: 60px!important;
+  padding-top: 20px!important;
+}
 
 .bg {
   background-color: var(--cphBlue);

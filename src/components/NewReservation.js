@@ -69,7 +69,7 @@ export function NewReservation() {
         setAntal("")
         setRoomnumber("")
       })
-      
+
   }
 
 
@@ -83,8 +83,9 @@ export function NewReservation() {
 
           {/* VÆLGER DATO */}
 
-          <Grid.Col className='nr-grid' span={4}>
+          <Grid.Col className='nr-grid' id='date' span={4}>
 
+            <Title className='modal-title'>Date</Title>
             <input type="date" value={dato} onChange={handleDatoChange} required />
 
           </Grid.Col>
