@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Hepta+Slab:wght@500&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
+
 * {
   flex-wrap: nowrap !important;
   --grid-gutter: 0;
@@ -479,9 +480,11 @@ label {
   --col-flex-basis:none!important;
   height: 90dvh!important;
 }
-
-.rc {
-  height: 80dvh;
+.__m__-ru {
+  --col-flex-grow: 0!important;
+}
+.__m__-Rrem {
+  --col-flex-grow: 0!important;
 }
 .rc-title {
   color: var(--textColor2);

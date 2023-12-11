@@ -10,15 +10,14 @@ import { ReservationComplete } from '@/components/ReservationComplete';
 export default function Complete() {
   return (
     // <PageWrapper>
-    <div className='bg-second'>
+    <div className='bg'>
 
       <Grid>
 
-        <GridCol span='auto' w={94}  className='rc'>
+        <GridCol span='auto' className='left-bg rc'>
 
           <Image 
           src={sideImg}
-          height={738.39}
           />
 
         </GridCol>
