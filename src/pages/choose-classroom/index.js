@@ -80,7 +80,7 @@ const availableTimes = () => {
   }, []);
 
   return (
-    <div className="booking div-text bg-available-times">
+    <div className="booking div-text bg">
       {/* Booking Flow */}
       <Grid span="auto" className="booking-flow">
         {/* Sidebar */}

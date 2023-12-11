@@ -11,15 +11,14 @@ import Image from 'next/image'
 export default function newReservation() {
   return (
     <PageWrapper>
-    <div className='bg-home'>
+    <div className='bg'>
 
       <Grid className='grid-home'>
 
-        <GridCol span='auto' w={94} h={800}>
+        <GridCol span='auto' w={94}>
 
           <Image 
           src={sideImg}
-          height={900}
           />
 
         </GridCol>

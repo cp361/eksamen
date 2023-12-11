@@ -1,9 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Hepta+Slab:wght@500&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 * {
-  --col-flex-grow: 0 !important;
   flex-wrap: nowrap !important;
   --grid-gutter: 0;
+  --col-flex-grow: none!important;
 }
 
 :root {
@@ -29,22 +29,15 @@ input[type=time]::-webkit-datetime-edit-ampm-field {
   background-color: var(--cphBlue);
   height: 100vh;
   display: grid;
-  justify-content: center;
-  align-items: center;
+  
 }
-.bg-available-times {
+.bg-complete {
   background-color: var(--cphBlue);
+  height: 100vh;
   display: grid;
-  justify-content: center;
+  
   align-items: center;
-}
-.bg-home {
-  background-color: var(--cphBlue);
-  display: grid;
   justify-content: center;
-  align-items: center;
-
-  height: 100dvh;
 }
 .m-96bdd299 {
   padding: 0 !important;
@@ -140,14 +133,19 @@ input[type=time]::-webkit-datetime-edit-ampm-field {
 !=========================================
 !=========================================
 */
-.__m__-Rrem {
-  --col-flex-grow: 0 !important;
+.__m__-Rdmum {
+  --col-flex-grow: 0!important;
+}
+.__m__-r61 {
+  --col-flex-grow: 0!important;
 }
 .right-bg {
   background-color: white !important;
-  height: 800px;
 }
-
+.grid-home {
+  width: 100%;
+  background-color: red;
+}
 /*
 !=========================================
 !=========================================
@@ -167,7 +165,7 @@ input[type=time]::-webkit-datetime-edit-ampm-field {
   --grid-gutter: none !important;
 }
 .booking {
-  display: flex;
+
   height: 100dvh !important;
 }
 .booking h1 {
@@ -178,6 +176,7 @@ input[type=time]::-webkit-datetime-edit-ampm-field {
   display: flex;
   justify-content: center;
   background-image: url("../assets/sidebar-background.png");
+  height: 100dvh;
 }
 .sidebar > * {
   margin-top: 20px;
@@ -264,8 +263,7 @@ label {
   margin-top: -40px;
   padding-inline: 30px;
   padding-bottom: 10px;
-
-  max-width: 1000px;
+  max-width: 100%;
 }
 .new-reservation p {
   color: var(--textColor);
@@ -394,7 +392,6 @@ label {
   border: 1px solid var(--textColor);
   justify-content: flex-start;
   display: flex;
-  margin: 20px;
   padding: 10px 0 20px 0 !important;
 }
 
@@ -409,13 +406,11 @@ label {
 .ur-grid {
   display: flex;
   justify-content: space-between;
-  padding: 8px;
   padding-top: 20px;
 }
 
 .this-week-grid {
   border: 1px solid var(--textColor);
-  justify-content: center;
   display: flex;
   margin-block: 20px;
 }
@@ -477,6 +472,11 @@ label {
 !=========================================
 !=========================================
 */
+.__m__-r21 {
+  --col-flex-basis:none!important;
+  height: 90dvh!important;
+}
+
 .rc {
   height: 80dvh;
 }
