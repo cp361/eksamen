@@ -463,6 +463,11 @@ label {
   font-weight: 700;
 }
 
+.no-reservations {
+  line-height: 2;
+  font-size: 1rem;
+}
+
 .ur-container p {
   color: var(--textColor);
 }

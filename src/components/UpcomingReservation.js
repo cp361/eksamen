@@ -31,13 +31,15 @@ export function UpcomingReservation() {
 
         <Grid gutter="lg" className="ur-grid">
 
-          <div className="this-week-grid" span={4}>
-
-            {reservation.map((reservation, index) => {
-              return <ReservationBox key={index} reservation={reservation} />;
-            })}
-
-          </div>
+        {reservation.length === 0 ? (
+            <p className="no-reservations">No upcoming reservations. <br/> Create a new one below!</p>
+          ) : (
+            <div className="this-week-grid" span={4}>
+              {reservation.map((reservation, index) => {
+                return <ReservationBox key={index} reservation={reservation} />;
+              })}
+            </div>
+          )}
 
 
         </Grid>
