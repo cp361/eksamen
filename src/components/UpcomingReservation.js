@@ -35,8 +35,8 @@ export function UpcomingReservation() {
             <p className="no-reservations">No upcoming reservations. <br/> Create a new one below!</p>
           ) : (
             <div className="this-week-grid" span={4}>
-              {reservation.map((reservation, index) => {
-                return <ReservationBox key={index} reservation={reservation} />;
+              {reservation.map((reservation, classroom, index) => {
+                return <ReservationBox key={index} reservation={reservation} classroom={classroom}/>;
               })}
             </div>
           )}
