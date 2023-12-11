@@ -3,7 +3,7 @@ import { supabase } from "../../pages/lib/helper/supabaseClient.js";
 import { useRouter } from "next/router";
 import { Center, Title } from "@mantine/core";
 import { Container, Anchor, Text } from "@mantine/core";
-import classes from "../styles/AuthenticationTitle.module.css";
+import classes from "../../styles/AuthenticationTitle.module.css";
 import { emailRecieved } from "../alert/EmailAlert.js";
 
 const SignUpForm = () => {
@@ -30,7 +30,7 @@ const SignUpForm = () => {
     }
   };
   return (
-    <div className="bg">
+    <div className="">
       <Container h={556.8} w={505.8} pt={30} className="form-bg">
         <div>
           <Center>

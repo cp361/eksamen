@@ -10,7 +10,7 @@ import { ReservationComplete } from '@/components/ReservationComplete';
 export default function Complete() {
   return (
     // <PageWrapper>
-    <div className='bg-complete'>
+    <div className='bg-second'>
 
       <Grid>
 

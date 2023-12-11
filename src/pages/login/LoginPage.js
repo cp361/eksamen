@@ -10,7 +10,7 @@ const LoginPage = () => {
 
     //! Page wrapperen gør så der kommer en lille animation ved load
     <PageWrapper>
-      <div className="bg div-text">
+      <div className="bg-second div-text">
         <Grid className='grid' align='center'>
           <GridCol span='auto' h={556.8} w={400} className='img-bg'>
             <Image

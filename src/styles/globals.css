@@ -3,7 +3,7 @@
 * {
   flex-wrap: nowrap !important;
   --grid-gutter: 0;
-  --col-flex-grow: none!important;
+  /* --col-flex-grow: none!important; */
 }
 
 :root {
@@ -31,7 +31,7 @@ input[type=time]::-webkit-datetime-edit-ampm-field {
   display: grid;
   
 }
-.bg-complete {
+.bg-second {
   background-color: var(--cphBlue);
   height: 100vh;
   display: grid;
@@ -137,6 +137,9 @@ input[type=time]::-webkit-datetime-edit-ampm-field {
   --col-flex-grow: 0!important;
 }
 .__m__-r61 {
+  --col-flex-grow: 0!important;
+}
+.__m__-r37 {
   --col-flex-grow: 0!important;
 }
 .right-bg {
