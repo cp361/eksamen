@@ -309,6 +309,12 @@ label {
 .cr-container .cr-grid {
   --grid-gutter: 1 !important;
 }
+
+.__m__-r3 {
+  --col-flex-grow: 0!important;
+}
+
+
 .nr-container {
   width: 100%;
   padding-top: 40px;
