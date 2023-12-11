@@ -84,7 +84,8 @@ const availableTimes = ({ reservation, setReservation }) => {
     const fetchClassRooms = async () => {
       const { data, error } = await supabase
         .from("classrooms")
-        .select("")
+        .select('')
+        .limit(1)
 
       if (error) {
         setFetchError("Could not fetch class rooms");

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Container, Button, Title, Grid } from "@mantine/core";
+import { Container, Button, Title, Grid, GridCol } from "@mantine/core";
 import { cancelAlert } from "./alert/CancelAlert";
 import ReservationBox from "./time/ContactBox";
 
@@ -26,15 +26,20 @@ export function UpcomingReservation() {
   return (
     <>
       <Container fluid className="ur-container">
-        <Title className="ur-title">Upcoming reservations</Title>
-        <Grid gutter="lg" className="ur-grid">
-          <Grid.Col className="this-week-grid" span={4}>
-        {reservation.map((reservation, index) => {
-            return <ReservationBox key={index} reservation={reservation} />;
-        })}
-          </Grid.Col>
 
-          
+        <Title className="ur-title">Upcoming reservations</Title>
+
+        <Grid gutter="lg" className="ur-grid">
+
+          <div className="this-week-grid" span={4}>
+
+            {reservation.map((reservation, index) => {
+              return <ReservationBox key={index} reservation={reservation} />;
+            })}
+
+          </div>
+
+
         </Grid>
       </Container>
     </>

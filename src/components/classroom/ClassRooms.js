@@ -22,7 +22,7 @@ const ClassRoomCard = ({ classroom }) => {
       <p className='classroom-facility'> {classroom.facility2} </p>
       <p className='classroom-facility'> {classroom.facility3} </p>
 
-      <Button className='classroom-button' size='md' color='var(--cphYellow)'>Book</Button>
+      <Button className='classroom-button' size='md' color='var(--cphYellow)'>Select</Button>
 
     </div>
   )

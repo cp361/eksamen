@@ -12,6 +12,7 @@ import ChooseTime from './time/ChooseTime';
 import ChooseAttendants from './attendants/ChooseAttendants';
 import { supabase } from '@/pages/lib/helper/supabaseClient';
 import { Reservation } from '@/entities/reservationss';
+import ClassRoomCard from './classroom/ClassRooms';
 
 
 
@@ -75,6 +76,31 @@ export function NewReservation() {
 
   const router = useRouter();
 
+
+  const [fetchError, setFetchError] = useState(null);
+  const [ClassRooms, setClassRooms] = useState(null);
+
+  useEffect(() => {
+    const fetchClassRooms = async () => {
+      const { data, error } = await supabase
+        .from("classrooms")
+        .select("")
+
+      if (error) {
+        setFetchError("Could not fetch class rooms");
+        setClassRooms(null);
+        console.log(error);
+      }
+      if (data) {
+        setClassRooms(data);
+        setFetchError(null);
+      }
+    };
+
+    fetchClassRooms();
+  }, []);
+
+
   return (
     <>
       <Container fluid className='cr-container'>
@@ -83,58 +109,57 @@ export function NewReservation() {
 
           {/* VÆLGER DATO */}
 
-          <Grid.Col className='nr-grid' id='date' span={4}>
+          <Grid.Col className='nr-grid' span={3}>
 
-            <Title className='modal-title'>Date</Title>
-            <input type="date" value={dato} onChange={handleDatoChange} required />
-
-          </Grid.Col>
-
-          {/* VÆLGER TIDSPUNKT */}
-
-          <Grid.Col className='nr-grid' span={4}>
             <div className='nr-modal-div'>
-              <Title className='modal-title'>Time</Title>
+              <Title className='modal-title'>Date</Title>
+              <input type="date" id='date' value={dato} onChange={handleDatoChange} required />
 
-              <select
-                id="tid"
-                name="tid"
-                value={tid}
-                onChange={handleTidChange}
-              >
-                <option value={'08:00 - 10:00'}>08:00 - 10:00</option>
-                <option value={'10:00 - 12:00'}>10:00 - 12:00</option>
-                <option value={'12:00 - 14:00'}>12:00 - 14:00</option>
-                <option value={'14:00 - 16:00'}>14:00 - 16:00</option>
-                <option value={'16:00 - 18:00'}>16:00 - 18:00</option>
-                <option value={'18:00 - 20:00'}>18:00 - 20:00</option>
-                <option value={'20:00 - 22:00'}>20:00 - 22:00</option>
-                <option value={'22:00 - 00:00'}>22:00 - 00:00</option>
-              </select>
+              <p>
+                When do want to reserve a classroom?
+              </p>
 
             </div>
 
           </Grid.Col>
 
-          {/* VÆLGER DELTAGERE */}
+          {/* VÆLGER TIDSPUNKT */}
 
-          <Grid.Col className='nr-grid' span={4}>
+          <Grid.Col className='nr-grid' span={3}>
+            <div className='nr-modal-div'>
+              <Title className='modal-title'>Time</Title>
 
-            <div className='nr-numberinput-div'>
-              <Title className='numberinput-title'>Attendants</Title>
-              <div className='choose-attendants'>
+              <div className='choose-time'>
+                <select
+                  id="tid"
+                  name="tid"
+                  value={tid}
+                  onChange={handleTidChange}
+                >
+                  <option value={'08:00 - 10:00'}>08:00 - 10:00</option>
+                  <option value={'10:00 - 12:00'}>10:00 - 12:00</option>
+                  <option value={'12:00 - 14:00'}>12:00 - 14:00</option>
+                  <option value={'14:00 - 16:00'}>14:00 - 16:00</option>
+                  <option value={'16:00 - 18:00'}>16:00 - 18:00</option>
+                  <option value={'18:00 - 20:00'}>18:00 - 20:00</option>
+                  <option value={'20:00 - 22:00'}>20:00 - 22:00</option>
+                  <option value={'22:00 - 00:00'}>22:00 - 00:00</option>
+                </select>
 
-                <input
-                  type="number"
-                  placeholder="0"
-                  value={antal}
-                  onChange={handleAntalChange}
-                />
+                <p>
+                  What time will you be needing the classroom?
+                </p>
 
               </div>
 
-              <div>
-                <label>Choose Classroom</label>
+            </div>
+
+          </Grid.Col>
+          <Grid.Col className='nr-grid' span={3}>
+            <div className=' nr-modal-div'>
+              <Title className='modal-title'>Choose Classroom</Title>
+              <div className='choose-classroom'>
+
                 <select
                   id="roomnumbers"
                   name="roomnumber"
@@ -147,21 +172,69 @@ export function NewReservation() {
                   <option value={164}>164</option>
                   <option value={264}>264</option>
                 </select>
+
+                <p>
+                  Which classroom do you want to reserve?
+                </p>
+
               </div>
 
-              <div className='nr-button-div'>
-                <Button
-                  // onClick={handleAddReservation}
-                  onClick={handleAddReservation}
-                  size="md"
-                  color="var(--cphYellow)"
-                >
-                  Confirm reservation
-                </Button>
+
+              {fetchError && <p> {fetchError} </p>}
+              {ClassRooms && (
+                <div className="classroomgrid">
+                  {ClassRooms.map((ClassRooms) => (
+                    <ClassRoomCard
+                      key={ClassRooms.id}
+                      classroom={ClassRooms}
+                    />
+                  ))}
+                </div>
+              )}
+
+            </div>
+
+          </Grid.Col>
+
+          {/* VÆLGER DELTAGERE */}
+
+          <Grid.Col className='nr-grid' span={3}>
+
+            <div className='nr-modal-div'>
+              <Title className='numberinput-title'>Attendants</Title>
+              <div className='choose-attendants'>
+
+                <input
+                  type="number"
+                  id='number'
+                  placeholder="0"
+                  value={antal}
+                  onChange={handleAntalChange}
+                />
+
               </div>
+
+              <p>
+                How many will be attending?
+              </p>
+
+
             </div>
           </Grid.Col>
         </Grid>
+
+        <div className='nr-button-div'>
+          <Button
+            // onClick={handleAddReservation}
+            onClick={handleAddReservation}
+            size="xl"
+
+            color="var(--cphYellow)"
+          >
+            Confirm reservation
+          </Button>
+        </div>
+
       </Container>
 
     </>
