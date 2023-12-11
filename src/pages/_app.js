@@ -10,6 +10,9 @@ import { DateProvider } from "@/context/date-context";
 export default function App({ Component, pageProps }) {
 
   const [roomnumber, setRoomnumber] = useState('');
+  const [dato, setDato] = useState('');
+  const [tid, setTid] = useState('');
+  const [antal, setAntal] = useState('');
   const [time, setTime] = useState('');
   const [date, setDate] = useState('');
   const [timeStart, setTimeStart] = useState('');
@@ -18,6 +21,13 @@ export default function App({ Component, pageProps }) {
 
   const contextValue = {
     roomnumber,
+    setRoomnumber,
+    tid,
+    setTid,
+    dato,
+    setDato,
+    antal,
+    setAntal,
     date,
     setDate,
     time,

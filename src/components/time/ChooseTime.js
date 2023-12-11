@@ -8,8 +8,16 @@ import '@mantine/dates/styles.css';
 
 const ChooseTime = () => {
 
+    const [tidStart, setTidStart] = useState("")
+    const [tidSlut, setTidSlut] = useState("")
 
-    
+    const handleTidStartChange = (e) => {
+        setTidStart(e.target.value)
+    }
+    const handleTidSlutChange = (e) => {
+        setTidSlut(e.target.value)
+    }
+
 
     const contextValue = useMyContext();
 
@@ -25,10 +33,12 @@ const ChooseTime = () => {
     return (
         <div className='todayDate'>
             <label>Reservation start</label>
-            <input type='time' required value={contextValue.timeStart} onChange={handleChangeStart}></input>
+            <input type="time" value={tidStart} onChange={handleTidStartChange} />
+            {/* <input type='time' required value={contextValue.timeStart} onChange={handleChangeStart}></input> */}
 
-            <label>Reservation end</label>
-            <input type='time' required value={contextValue.timeEnd} onChange={handleChangeEnd}></input>
+            <label>Reservation slut</label>
+            <input type="time" value={tidSlut} onChange={handleTidSlutChange} />
+            {/* <input type='time' required value={contextValue.timeEnd} onChange={handleChangeEnd}></input> */}
         </div>
     )
 }

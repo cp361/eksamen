@@ -1,72 +1,40 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Container, Button, Title, Grid } from "@mantine/core";
 import { cancelAlert } from "./alert/CancelAlert";
+import ReservationBox from "./time/ContactBox";
 
 export function UpcomingReservation() {
+
+  const [reservation, setReservation] = useState([]);
+
+  const getReservation = async () => {
+    const anonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndiaW1zZ3pneGFoaGx0cGJ2d2x1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTkyNzc3NTAsImV4cCI6MjAxNDg1Mzc1MH0.bR_zj_y7vzf7fvsW-N-6126mAyKquznFzvDur-m-_mw'
+    const data = await fetch('https://wbimsgzgxahhltpbvwlu.supabase.co/rest/v1/contactlist?select=*', {
+      headers: {
+        apikey: anonKey,
+        Authorization: `Bearer ${anonKey}`,
+      }
+    }).then(response => response.json())
+
+    setReservation(data);
+  }
+
+  useEffect(() => {
+    getReservation();
+  }, []);
+
   return (
     <>
       <Container fluid className="ur-container">
         <Title className="ur-title">Upcoming reservations</Title>
         <Grid gutter="lg" className="ur-grid">
           <Grid.Col className="this-week-grid" span={4}>
-            <div className="ur-thisweek-dato">
-              <p>Tommorow</p>
-              <h1 className="title-date">10th</h1>
-              <p>November</p>
-            </div>
-            <div className="ur-thisweek-info">
-              <Title order={4} className="ur-thisweek-title">
-                CL-201
-              </Title>
-              <p>Kl. 12:00 - 16:30</p>
-              <p>4 Students</p>
-            </div>
-            <div className="ur-button">
-              <Button onClick={cancelAlert} color="var(--cphYellow)">
-                Cancel
-              </Button>
-            </div>
-          </Grid.Col>
-          <Grid.Col className="this-week-grid" span={4}>
-            <div className="ur-thisweek-dato">
-              <p>Monday</p>
-              <h1 className="title-date">13th</h1>
-              <p>November</p>
-            </div>
-            <div className="ur-thisweek-info">
-              <Title order={4} className="ur-thisweek-title">
-                CL-164
-              </Title>
-              <p>Kl. 13:00 - 16:00</p>
-              <p>3 Students</p>
-            </div>
-
-            <div className="ur-button">
-              <Button onClick={cancelAlert} color="var(--cphYellow)">
-                Cancel
-              </Button>
-            </div>
+        {reservation.map((reservation, index) => {
+            return <ReservationBox key={index} reservation={reservation} />;
+        })}
           </Grid.Col>
 
-          <Grid.Col className="this-week-grid" span={4}>
-            <div className="ur-thisweek-dato">
-              <p>Wednesday</p>
-              <h1 className="title-date">15th</h1>
-              <p>November</p>
-            </div>
-            <div className="ur-thisweek-info">
-              <Title order={4} className="ur-thisweek-title">
-                CL-209
-              </Title>
-              <p>Kl. 8:00 - 12:00</p>
-              <p>2 Students</p>
-            </div>
-            <div className="ur-button">
-              <Button onClick={cancelAlert} color="var(--cphYellow)">
-                Cancel
-              </Button>
-            </div>
-          </Grid.Col>
+          
         </Grid>
       </Container>
     </>

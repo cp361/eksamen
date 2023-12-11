@@ -20,38 +20,59 @@ import ChosenDate from "@/components/date/ChosenDate";
 import ChosenTime from "@/components/time/ChosenTime";
 import ChosenAttendants from "@/components/attendants/ChosenAttendants";
 import { Reservations } from "@/entities/reservations";
+import { Reservation } from "@/entities/reservationss";
 
-const availableTimes = () => {
+const availableTimes = ({ reservation, setReservation }) => {
 
-  //! Prøvede at få post til at virke
-  // const { date, time, attendants, roomnumber } = useMyContext();
-  // const [reservations, setNewReservation] = useState([]);
+  const [roomnumber, setRoomnumber] = useState("")
+  const [date, setDate] = useState("")
+  const [timeStart, setTimeStart] = useState("")
+  const [attendants, setAttendants] = useState("")
 
-  // const handleAddReservation = () => {
+  const handleDatoChange = (e) => {
+    setDato(e.target.value)
+  }
 
-    
-  //   const c = new Reservations(roomnumber, date, time, attendants);
-  //   addNewReservation(c)
-  // };
+  const handleTidChange = (e) => {
+    setTid(e.target.value)
+  }
+  const handleAntalChange = (e) => {
+    setAntal(e.target.value)
+  }
+  const handleRoomnumberChange = (e) => {
+    setRoomnumber(e.target.value)
+  }
 
-  // const addNewReservation = async (reservation) => {
-  //   const anonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRocG1keGhudnltZ2h3eGpucWtvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDA1MTA2MzYsImV4cCI6MjAxNjA4NjYzNn0.iSvURo8-6F-ns9QmFtEnuBE0pvQdHw6vf2VaMUAVQz0'
-  //   fetch('https://thpmdxhnvymghwxjnqko.supabase.co/rest/v1/reservations', {
-  //     method: 'POST',
-  //     body: JSON.stringify(reservation),
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //       apikey: anonKey,
-  //       Authorization: `Bearer ${anonKey}`,
-  //       'Prefer': 'return=minimal',
-  //     }
-  //   }).then(response => response.json())
-  //     .then(addNewReservation => {
-  //       setNewReservation([...reservations, addNewReservation[1]]);
+  const handleAddReservation = () => {
+    const c = new Reservation(date, timeStart, attendants, roomnumber)
+    newReservation(c)
+  }
 
+  const newReservation = async (reservation) => {
+    const anonKey =
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndiaW1zZ3pneGFoaGx0cGJ2d2x1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTkyNzc3NTAsImV4cCI6MjAxNDg1Mzc1MH0.bR_zj_y7vzf7fvsW-N-6126mAyKquznFzvDur-m-_mw"
+    fetch("https://wbimsgzgxahhltpbvwlu.supabase.co/rest/v1/contactlist", {
+      method: "POST",
+      body: JSON.stringify(reservation),
+      headers: {
+        "Content-Type": "application/json",
+        apikey: anonKey,
+        Authorization: `Bearer ${anonKey}`,
+        Prefer: "return=representation",
+      },
+    })
+      .then((response) => response.json())
+      .then((newReservation) => {
+        setReservation([...reservation, newReservation[0]])
 
-  //     })
-  // }
+        //* Tømmer input felter
+        setDato("")
+        setTid("")
+        setAntal("")
+        setRoomnumber("")
+
+      })
+  }
 
 
   const router = useRouter();
@@ -160,7 +181,19 @@ const availableTimes = () => {
 
               {/* Booking Info */}
               <div className="main-col3">
-                <h3>CL - 209</h3>
+                <label>Choose Classroom</label>
+                <select
+                  id="roomnumbers"
+                  name="roomnumber"
+                  value={roomnumber}
+                  onChange={handleRoomnumberChange}
+                >
+                  <option value={209}>209</option>
+                  <option value={201}>201</option>
+                  <option value={312}>312</option>
+                  <option value={164}>164</option>
+                  <option value={264}>264</option>
+                </select>
 
                 <div className="reservation-info reservation-info-facilities">
                   <h4>Room facilities</h4>
@@ -183,7 +216,7 @@ const availableTimes = () => {
 
                 <Button
                   // onClick={handleAddReservation}
-                  onClick={() => router.push("/complete")}
+                  onClick={handleAddReservation}
                   size="md"
                   color="var(--cphYellow)"
                 >

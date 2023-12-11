@@ -7,18 +7,22 @@ import '@mantine/dates/styles.css';
 const CurrentDate = () => {
 
 
+    const [dato, setDato] = useState("")
 
+    const handleDatoChange = (e) => {
+        setDato(e.target.value)
+    }
 
     const contextValue = useMyContext();
     // const { date } = useMyContext();
 
-     var curr = new Date();
-     curr.setDate(curr.getDate());
-     var date = curr.toISOString().substring(0, 10);
+    var curr = new Date();
+    curr.setDate(curr.getDate());
+    var date = curr.toISOString().substring(0, 10);
 
-      function handleChange(event) {
-          contextValue.setDate(event.target.value);
-      }
+    function handleChange(event) {
+        contextValue.setDate(event.target.value);
+    }
 
 
     // const handleChangeDate = (date) => {
@@ -29,7 +33,7 @@ const CurrentDate = () => {
     return (
         <div className='todayDate'>
 
-                {/* <DatePicker
+            {/* <DatePicker
                 allowDeselect
                 hideOutsideDates
                 weekendDays={[0, 6]}
@@ -38,7 +42,7 @@ const CurrentDate = () => {
                 size={'sm'} /> */}
 
 
-            <input
+            {/* <input
                 type="date"
                 id="datePicker"
                 name="datePicker"
@@ -47,6 +51,16 @@ const CurrentDate = () => {
                 required
                 value={contextValue.date}
                 onChange={handleChange}
+            /> */}
+            <input
+                type="date"
+                id="datePicker"
+                name="datePicker"
+                min={date}
+                defaultValue={date}
+                value={dato}
+                onChange={handleDatoChange}
+                required
             />
         </div>
     )
