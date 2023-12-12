@@ -101,7 +101,7 @@ export function NewReservation() {
 
 
   const completeReservation = () => {
-   router.push('/complete');
+    router.push('/complete');
   }
 
   return (
@@ -112,7 +112,7 @@ export function NewReservation() {
 
           {/* VÆLGER DATO */}
 
-          <Grid.Col className='nr-grid' span={3}>
+          <Grid.Col className='nr-grid' span={4}>
 
             <div className='nr-modal-div'>
               <Title className='modal-title'>Date</Title>
@@ -122,14 +122,6 @@ export function NewReservation() {
                 When do want to reserve a classroom?
               </p>
 
-            </div>
-
-          </Grid.Col>
-
-          {/* VÆLGER TIDSPUNKT */}
-
-          <Grid.Col className='nr-grid' span={3}>
-            <div className='nr-modal-div'>
               <Title className='modal-title'>Time</Title>
 
               <div className='choose-time'>
@@ -158,7 +150,40 @@ export function NewReservation() {
             </div>
 
           </Grid.Col>
-          <Grid.Col className='nr-grid' span={3}>
+
+          {/* VÆLGER TIDSPUNKT */}
+
+          {/* <Grid.Col className='nr-grid' span={4}>
+            <div className='nr-modal-div'>
+              <Title className='modal-title'>Time</Title>
+
+              <div className='choose-time'>
+                <select
+                  id="tid"
+                  name="tid"
+                  value={tid}
+                  onChange={handleTidChange}
+                >
+                  <option value={'08:00 - 10:00'}>08:00 - 10:00</option>
+                  <option value={'10:00 - 12:00'}>10:00 - 12:00</option>
+                  <option value={'12:00 - 14:00'}>12:00 - 14:00</option>
+                  <option value={'14:00 - 16:00'}>14:00 - 16:00</option>
+                  <option value={'16:00 - 18:00'}>16:00 - 18:00</option>
+                  <option value={'18:00 - 20:00'}>18:00 - 20:00</option>
+                  <option value={'20:00 - 22:00'}>20:00 - 22:00</option>
+                  <option value={'22:00 - 00:00'}>22:00 - 00:00</option>
+                </select>
+
+                <p>
+                  What time will you be needing the classroom?
+                </p>
+
+              </div>
+
+            </div>
+
+          </Grid.Col> */}
+          <Grid.Col className='nr-grid' span={4}>
             <div className=' nr-modal-div'>
               <Title className='modal-title'>Choose Classroom</Title>
               <div className='choose-classroom'>
@@ -201,7 +226,7 @@ export function NewReservation() {
 
           {/* VÆLGER DELTAGERE */}
 
-          <Grid.Col className='nr-grid' span={3}>
+          <Grid.Col className='nr-grid' span={4}>
 
             <div className='nr-modal-div'>
               <Title className='numberinput-title'>Attendants</Title>
