@@ -602,6 +602,52 @@ label {
   grid-column-end: 3;
 }
 
+.reservation-complete-grid {
+  display: grid;
+  width: fit-content;
+  justify-content: center;
+  margin-inline: auto;
+}
+.reservation-complete-card {
+  padding: 10px;
+  text-align: center;
+}
+.reservation-complete-card p {
+  padding-block: 5px;
+  line-height: .5;
+}
+.reservation-complete-icons :nth-child(2) {
+  margin-inline: 10px;
+}
+
+.reservation-complete-number {
+  color: var(--textColor2);
+  margin-top: 0px;
+}
+.reservation-complete-number span {
+  color: var(--textColor);
+  font-size: 1rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*
 !=========================================
 !=========================================

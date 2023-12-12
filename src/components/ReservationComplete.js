@@ -1,20 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { Container, Paper, Title, Text, Button, Flex } from '@mantine/core';
+import { Container, Paper, Text, Button } from '@mantine/core';
 
-import { FaChalkboardTeacher, FaEdit, FaPlug } from "react-icons/fa";
+import { FaEdit } from "react-icons/fa";
 import { FaReceipt } from "react-icons/fa";
-import { FaRegCalendarAlt, FaTv } from "react-icons/fa";
-import Image from 'next/image';
-import classroomimg from '../assets/classroom-img.png'
+import { FaRegCalendarAlt} from "react-icons/fa";
 import { useRouter } from 'next/router';
-import ChosenDate from './date/ChosenDate';
-import ChosenTime from './time/ChosenTime';
-import ChosenAttendants from './attendants/ChosenAttendants';
-import useMyContext from '@/context/my-context';
-import { supabase } from '@/pages/lib/helper/supabaseClient';
-import ClassRoomCard from './classroom/ClassRooms';
-import ReservationBox from './time/ContactBox';
 import { supabase2 } from '@/pages/lib/helper/supabaseClient2';
+import ReservationCompleteCard from './classroom/ReservationCompleteCard';
 
 
 
@@ -81,9 +73,9 @@ export function ReservationComplete() {
 
           {fetchError && <p> {fetchError} </p>}
           {ClassRooms && (
-            <div className="classroomgrid">
+            <div className="reservation-complete-grid">
               {ClassRooms.map((ClassRooms) => (
-                <ClassRoomCard
+                <ReservationCompleteCard
                   key={ClassRooms.id}
                   classroom={ClassRooms}
                 />
