@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Container, Button, Title, Grid, GridCol } from "@mantine/core";
 import { cancelAlert } from "./alert/CancelAlert";
-import ReservationBox from "./time/ContactBox";
+import ReservationBox from "./ContactBox";
 
 export function UpcomingReservation() {
 

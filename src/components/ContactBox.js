@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { supabase } from "@/pages/lib/helper/supabaseClient";
-import ClassRoomCard2 from "../classroom/ClassRooms2";
+import ClassRoomCard2 from "./classroom/ClassRooms2";
 
 
 
