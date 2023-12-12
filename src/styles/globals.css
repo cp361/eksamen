@@ -483,11 +483,10 @@ label {
 }
 
 .upcoming-reservations {
-  
   display: flex;
   margin-block: 20px;
   display: grid;
-  height: auto;
+  height: 200px;
   width: 100%;
 
   grid-template-columns: repeat(1000, 2fr);
@@ -495,9 +494,6 @@ label {
   overflow-x: auto;
   width: fit-content;
 }
-
-
-
 
 .upcoming-reservations-title {
   color: var(--textColor2);
