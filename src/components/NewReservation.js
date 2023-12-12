@@ -246,25 +246,27 @@ export function NewReservation() {
                 How many will be attending?
               </p>
 
+              <div className='nr-button-div'>
+                <Button
+                  // onClick={handleAddReservation}
+                  onClick={event => {
+                    handleAddReservation();
+                    completeReservation();
+                  }}
+                  size="xl"
+
+                  color="var(--cphYellow)"
+                >
+                  Confirm reservation
+                </Button>
+              </div>
+
 
             </div>
           </Grid.Col>
         </Grid>
 
-        <div className='nr-button-div'>
-          <Button
-            // onClick={handleAddReservation}
-            onClick={event => {
-              handleAddReservation();
-              completeReservation();
-            }}
-            size="xl"
 
-            color="var(--cphYellow)"
-          >
-            Confirm reservation
-          </Button>
-        </div>
 
       </Container>
 
