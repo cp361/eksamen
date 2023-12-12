@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Container, Paper, Title, Text, Button, Flex } from '@mantine/core';
 
 import { FaChalkboardTeacher, FaEdit, FaPlug } from "react-icons/fa";
@@ -10,6 +10,11 @@ import { useRouter } from 'next/router';
 import ChosenDate from './date/ChosenDate';
 import ChosenTime from './time/ChosenTime';
 import ChosenAttendants from './attendants/ChosenAttendants';
+import useMyContext from '@/context/my-context';
+import { supabase } from '@/pages/lib/helper/supabaseClient';
+import ClassRoomCard from './classroom/ClassRooms';
+import ReservationBox from './time/ContactBox';
+import { supabase2 } from '@/pages/lib/helper/supabaseClient2';
 
 
 
@@ -20,6 +25,36 @@ import ChosenAttendants from './attendants/ChosenAttendants';
 export function ReservationComplete() {
 
   const router = useRouter();
+
+ const [fetchError, setFetchError] = useState(null);
+ const [ClassRooms, setClassRooms] = useState(null);
+
+ useEffect(() => {
+   const fetchClassRooms = async () => {
+     const { data, error } = await supabase2
+       .from("classrooms")
+       .select("*")
+       .order('id', { ascending: false })
+       .limit(1)
+
+     if (error) {
+       setFetchError("Could not fetch class rooms");
+       setClassRooms(null);
+       console.log(error);
+     }
+     if (data) {
+       setClassRooms(data);
+       setFetchError(null);
+
+     }
+   };
+
+   fetchClassRooms();
+ }, []);
+
+  
+
+
 
 
   return (
@@ -43,40 +78,20 @@ export function ReservationComplete() {
       <div className='rc-paper-div'>
         <Paper className='rc-paper' shadow="xs" p="xl">
 
-          <div class="angry-grid">
-            <div id="item-0">
-              <Title className='rc-info-title'>Room</Title>
-              <Text className='rc-info-number item-0-text'>CL-209</Text>
-              <Title className='rc-info-title item-0-text'><ChosenDate /></Title>
-              <Title className='rc-info-title item-0-text'><ChosenTime /></Title>
-              <Title className='rc-info-title item-0-text'><ChosenAttendants /></Title>
+
+          {fetchError && <p> {fetchError} </p>}
+          {ClassRooms && (
+            <div className="classroomgrid">
+              {ClassRooms.map((ClassRooms) => (
+                <ClassRoomCard
+                  key={ClassRooms.id}
+                  classroom={ClassRooms}
+                />
+              ))}
             </div>
-            <div id="item-2">
-              <Image
-                src={classroomimg}
-                className='rc-img'
-              />
-            </div>
-          </div>
-          <div className='rc-facilities'>
-            <div className='rc-facilities-title'>
-              <Title className='rc-info-title'>Room facilities</Title>
-            </div>
-            <div className='rc-facilities-elements'>
-              <div className='rc-facilities-item'>
-                <Text className='rc-info-text'>Smartboard</Text>
-                <FaTv color='var(--cphYellow)' size={30} />
-              </div>
-              <div className='rc-facilities-item'>
-                <Text className='rc-info-text'>Whiteboard</Text>
-                <FaChalkboardTeacher color='var(--cphYellow)' size={30} />
-              </div>
-              <div className='rc-facilities-item'>
-                <Text className='rc-info-text'>Outlets and extension cords</Text>
-                <FaPlug color='var(--cphYellow)' size={30} />
-              </div>
-            </div>
-          </div>
+          )}
+
+          
 
           <div>
             <Text className='rc-info-receipt'>

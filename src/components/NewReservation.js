@@ -7,7 +7,6 @@ import { useDisclosure } from '@mantine/hooks';
 import 'dayjs/locale/en';
 import useMyContext from '@/context/my-context';
 import { useRouter } from 'next/router';
-import Date from './date/DatePicker';
 import ChooseTime from './time/ChooseTime';
 import ChooseAttendants from './attendants/ChooseAttendants';
 import { supabase } from '@/pages/lib/helper/supabaseClient';

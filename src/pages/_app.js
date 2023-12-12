@@ -13,11 +13,6 @@ export default function App({ Component, pageProps }) {
   const [dato, setDato] = useState('');
   const [tid, setTid] = useState('');
   const [antal, setAntal] = useState('');
-  const [time, setTime] = useState('');
-  const [date, setDate] = useState('');
-  const [timeStart, setTimeStart] = useState('');
-  const [timeEnd, setTimeEnd] = useState('');
-  const [attendants, setAttendants] = useState('');
 
   const contextValue = {
     roomnumber,
@@ -27,16 +22,7 @@ export default function App({ Component, pageProps }) {
     dato,
     setDato,
     antal,
-    setAntal,
-    date,
-    setDate,
-    time,
-    timeStart,
-    timeEnd,
-    setTimeStart,
-    setTimeEnd,
-    attendants,
-    setAttendants,
+    setAntal
   };
 
   return (
