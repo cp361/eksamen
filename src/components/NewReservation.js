@@ -101,6 +101,10 @@ export function NewReservation() {
   }, []);
 
 
+  const completeReservation = () => {
+   router.push('/complete');
+  }
+
   return (
     <>
       <Container fluid className='cr-container'>
@@ -226,7 +230,10 @@ export function NewReservation() {
         <div className='nr-button-div'>
           <Button
             // onClick={handleAddReservation}
-            onClick={handleAddReservation}
+            onClick={event => {
+              handleAddReservation();
+              completeReservation();
+            }}
             size="xl"
 
             color="var(--cphYellow)"
