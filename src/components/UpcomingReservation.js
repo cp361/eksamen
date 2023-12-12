@@ -27,14 +27,14 @@ export function UpcomingReservation() {
     <>
       <Container fluid className="ur-container">
 
-        <Title className="ur-title">Upcoming reservations</Title>
+        <Title className="upcoming-reservations-title">Upcoming reservations</Title>
 
-        <Grid gutter="lg" className="ur-grid">
+        <Grid gutter="lg" className="upcoming-reservations-grid">
 
         {reservation.length === 0 ? (
             <p className="no-reservations">No upcoming reservations. <br/> Create a new one below!</p>
           ) : (
-            <div className="this-week-grid" span={4}>
+            <div className="upcoming-reservations" span={4}>
               {reservation.map((reservation, classroom, index) => {
                 return <ReservationBox key={index} reservation={reservation} classroom={classroom}/>;
               })}

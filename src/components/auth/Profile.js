@@ -42,12 +42,12 @@ export function Profile() {
   //   console.log(session?.user);
   // }
 
-  const test = async () => {
+  // const test = async () => {
 
-    const { data, error } = await supabase.auth.refreshSession()
-    const { session, user } = data
-    console.log(session?.user);
-  }
+  //   const { data, error } = await supabase.auth.refreshSession()
+  //   const { session, user } = data
+  //   console.log(session?.user);
+  // }
 
   return (
     <Container className='profile-container' fluid h={100} bg="var(--cphYellow)">

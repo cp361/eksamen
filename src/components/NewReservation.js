@@ -108,7 +108,7 @@ export function NewReservation() {
   return (
     <>
       <Container fluid className='cr-container'>
-        <Title className='ur-title'>Create a new reservation</Title>
+        <Title className='upcoming-reservations-title'>Create a new reservation</Title>
         <Grid gutter="lg" className='cr-grid'>
 
           {/* VÆLGER DATO */}
