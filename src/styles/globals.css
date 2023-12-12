@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Hepta+Slab:wght@500&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-
 * {
   flex-wrap: nowrap !important;
   --grid-gutter: 0;
@@ -19,18 +18,18 @@ html {
   font-family: poppins, sans-serif !important;
 }
 
-
-input[type=time]::-webkit-datetime-edit-ampm-field {
+input[type="time"]::-webkit-datetime-edit-ampm-field {
   display: none;
 }
 
-input, select {
+input,
+select {
   color: var(--textColor);
   border: 1px solid lightgray;
 }
 p {
   color: var(--textColor);
-  font-size: .8rem;
+  font-size: 0.8rem;
   margin-top: 0px;
 }
 
@@ -38,19 +37,16 @@ p {
   margin-top: 2px;
 }
 
-
-
 .bg {
   background-color: var(--cphBlue);
   /* height: 100vh; */
   display: grid;
-  
 }
 .bg-second {
   background-color: var(--cphBlue);
   height: 100vh;
   display: grid;
-  
+
   align-items: center;
   justify-content: center;
 }
@@ -149,13 +145,13 @@ p {
 !=========================================
 */
 .__m__-Rdmum {
-  --col-flex-grow: 0!important;
+  --col-flex-grow: 0 !important;
 }
 .__m__-r61 {
-  --col-flex-grow: 0!important;
+  --col-flex-grow: 0 !important;
 }
 .__m__-r37 {
-  --col-flex-grow: 0!important;
+  --col-flex-grow: 0 !important;
 }
 .right-bg {
   background-color: white !important;
@@ -183,7 +179,6 @@ p {
   --grid-gutter: none !important;
 }
 .booking {
-
   height: 100dvh !important;
 }
 .booking h1 {
@@ -294,7 +289,7 @@ label {
   font-weight: 700;
 }
 .reservation-info-facilities {
-  line-height: .3rem;
+  line-height: 0.3rem;
 }
 
 /*
@@ -311,12 +306,11 @@ label {
 }
 
 .__m__-r3 {
-  --col-flex-grow: 0!important;
+  --col-flex-grow: 0 !important;
 }
 .__m__-R3dnm {
-  --col-flex-grow: 0!important;
+  --col-flex-grow: 0 !important;
 }
-
 
 .nr-container {
   width: 100%;
@@ -346,7 +340,7 @@ label {
 .todayDate label {
   color: var(--textColor2);
   font-weight: 700;
-  font-size: .8rem;
+  font-size: 0.8rem;
 }
 
 .todayDate input {
@@ -379,7 +373,9 @@ label {
   margin-bottom: 10px;
 }
 
-#tid, #number, #date {
+#tid,
+#number,
+#date {
   display: flex;
   margin-inline: auto;
   margin-bottom: 5px;
@@ -414,7 +410,6 @@ label {
   color: var(--textColor2);
 }
 
-
 .__m__-rlh .__m__-r95 {
   --grid-gutter: 0 !important;
 }
@@ -433,7 +428,6 @@ label {
 .nr-button-div {
   justify-content: center;
   display: flex;
-
 
   margin-block: 100px;
 }
@@ -456,10 +450,9 @@ label {
 }
 
 .reservations ul {
-  list-style: none!important;
+  list-style: none !important;
   padding-inline-start: 0px;
   margin-right: 20px;
-
 }
 
 .subtitle {
@@ -546,14 +539,14 @@ label {
 !=========================================
 */
 .__m__-r21 {
-  --col-flex-basis:none!important;
-  height: 90dvh!important;
+  --col-flex-basis: none !important;
+  height: 90dvh !important;
 }
 .__m__-ru {
-  --col-flex-grow: 0!important;
+  --col-flex-grow: 0 !important;
 }
 .__m__-Rrem {
-  --col-flex-grow: 0!important;
+  --col-flex-grow: 0 !important;
 }
 .rc-title {
   color: var(--textColor2);
@@ -564,13 +557,13 @@ label {
 }
 .rc-info-text {
   color: var(--textColor) !important;
-  font-size: .9rem!important;
+  font-size: 0.9rem !important;
   text-align: center;
 }
 .rc-info-receipt {
   color: var(--textColor) !important;
   font-style: italic;
-  font-size: .9rem!important;
+  font-size: 0.9rem !important;
   text-align: center;
 }
 .rc-info-number {
@@ -739,23 +732,23 @@ label {
 .classroom-card {
   border: 1px solid var(--textColor);
   padding: 10px;
-  line-height: .5rem;
+  line-height: 0.5rem;
 }
 .classroom-card2 {
   padding: 10px;
   text-align: center;
 }
 .classroom-icons :nth-child(2) {
-  margin-inline: 10px
+  margin-inline: 10px;
 }
 
 .classroomgrid {
   display: grid;
   grid-template-columns: repeat(2, 2fr);
   overflow-x: hidden;
-  width: 100%;
+  width: fit-content;
   height: 400px;
-  padding-right: 10px;
+  justify-content: center;
 }
 
 .classroom-card-img {
@@ -766,7 +759,6 @@ label {
 .classroom-number2 {
   color: var(--textColor2);
   margin-top: 0px;
-
 }
 
 .classroom-button:focus {
