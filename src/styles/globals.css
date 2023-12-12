@@ -470,15 +470,21 @@ label {
 }
 
 .ur-grid {
-  display: flex;
   justify-content: space-between;
   padding-top: 20px;
 }
 
 .this-week-grid {
   border: 1px solid var(--textColor);
-  display: flex;
   margin-block: 20px;
+  display: grid;
+  height: auto;
+  width: 100%;
+
+  grid-template-columns: repeat(1000, 2fr);
+  overflow-y: hidden;
+  overflow-x: scroll;
+  width: fit-content;
 }
 
 .ur-thisweek-dato {
