@@ -440,7 +440,7 @@ label {
 }
 
 .reservations {
-  padding: 20px;
+  padding: 20px 20px 10px 20px;
 
   border-right: 1px solid var(--textColor);
   border-top: 1px solid var(--textColor);
@@ -485,7 +485,7 @@ label {
 .upcoming-reservations {
   margin-block: 20px;
   display: grid;
-  height: 200px;
+  height: auto;
   width: 100%;
   grid-template-columns: repeat(1000, 2fr);
   overflow-y: hidden;
@@ -614,7 +614,7 @@ label {
 }
 .reservation-complete-card p {
   padding-block: 5px;
-  line-height: .5;
+  line-height: 0.5;
 }
 .reservation-complete-icons :nth-child(2) {
   margin-inline: 10px;
@@ -628,25 +628,6 @@ label {
   color: var(--textColor);
   font-size: 1rem;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /*
 !=========================================
@@ -758,6 +739,16 @@ label {
 .classroom-card2 {
   padding: 10px;
   text-align: center;
+
+  display: flex;
+}
+.classroom-card-info {
+  display: block;
+  line-height: 1;
+  padding-inline: 10px;
+}
+.classroom-card-info p:first-of-type {
+  padding-top: 10px;
 }
 .classroom-icons :nth-child(2) {
   margin-inline: 10px;
