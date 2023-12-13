@@ -12,6 +12,7 @@ const ClassRoomCard2 = ({ reservation, classroom }) => {
         <Image
           src={classroomimg}
           className='classroom-card-img'
+          alt='classroom image'
         />
 
       <h3 className='classroom-number2'> {reservation.roomnumber} </h3>

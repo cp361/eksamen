@@ -21,6 +21,7 @@ export default function newReservation() {
           src={sideImg}
           height={1050}
           width={94}
+          alt='sidebar image'
           />
 
         </GridCol>

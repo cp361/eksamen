@@ -11,6 +11,7 @@ const ClassRoomCard = ({ classroom }) => {
       <Image
         src={classroomimg}
         className='classroom-card-img'
+        alt='classroom image'
       />
       <h3 className='classroom-number'> {classroom.roomnumber} </h3>
       <div className='classroom-icons'>

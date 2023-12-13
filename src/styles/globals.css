@@ -208,10 +208,6 @@ p {
   --grid-gutter: 0 !important;
 }
 
-.m-396ce5cb[data-selected] {
-  --_day-bg: var(--cphYellow) !important;
-  --_day-color: var(--mantine-color-white);
-}
 
 .numberinput-title {
   color: var(--textColor2);
