@@ -105,7 +105,7 @@ export function NewReservation() {
         <Title className='upcoming-reservations-title'>Create a new reservation</Title>
         <Grid gutter="lg" className='cr-grid'>
 
-          {/* VÆLGER DATO */}
+          {/* VÆLGER DATO, TID & ANTAL */}
 
           <Grid.Col className='nr-grid' span={4}>
 
@@ -142,16 +142,33 @@ export function NewReservation() {
 
               </div>
 
+              <Title className='modal-title'>Attendants</Title>
+              <div className='choose-attendants'>
+
+                <input
+                  type="number"
+                  id='number'
+                  placeholder="0"
+                  value={antal}
+                  onChange={handleAntalChange}
+                />
+
+              </div>
+
+              <p>
+                How many will be attending?
+              </p>
+
             </div>
 
           </Grid.Col>
 
           {/* VÆLGER TIDSPUNKT */}
 
-          
+
           <Grid.Col className='nr-grid' span={4}>
             <div className=' nr-modal-div'>
-              <Title className='modal-title'>Choose Classroom</Title>
+              <Title className='numberinput-title'>Choose Classroom</Title>
               <div className='choose-classroom'>
 
                 <select
@@ -194,24 +211,6 @@ export function NewReservation() {
 
           <Grid.Col className='nr-grid' span={4}>
 
-            <div className='nr-modal-div'>
-              <Title className='numberinput-title'>Attendants</Title>
-              <div className='choose-attendants'>
-
-                <input
-                  type="number"
-                  id='number'
-                  placeholder="0"
-                  value={antal}
-                  onChange={handleAntalChange}
-                />
-
-              </div>
-
-              <p>
-                How many will be attending?
-              </p>
-
               <div className='nr-button-div'>
                 <Button
                   // onClick={handleAddReservation}
@@ -227,8 +226,6 @@ export function NewReservation() {
                 </Button>
               </div>
 
-
-            </div>
           </Grid.Col>
         </Grid>
 

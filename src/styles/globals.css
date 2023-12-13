@@ -396,7 +396,7 @@ label {
 }
 
 .modal-title {
-  padding-bottom: 30px;
+  padding-top: 30px;
   color: var(--textColor2);
   font-size: 1.5rem !important;
   text-align: center;
@@ -406,6 +406,7 @@ label {
   margin-inline: auto;
   padding-top: 20px;
   padding-bottom: 20px;
+  text-align: center;
 }
 
 .header-title {
@@ -430,14 +431,15 @@ label {
 
 .nr-button-div {
   justify-content: center;
-  display: flex;
+  display: grid;
+  align-items: center;
 
-  margin-block: 100px;
+  margin-block: auto;
 }
 
 .nr-grid {
   border: 1px solid var(--textColor);
-  justify-content: flex-start;
+  justify-content: center;
   display: flex;
   padding: 10px 0 20px 0 !important;
 }
