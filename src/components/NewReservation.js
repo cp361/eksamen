@@ -126,6 +126,7 @@ export function NewReservation() {
                   value={tid}
                   onChange={handleTidChange}
                 >
+                  <option value={'null'}>Select time period</option>
                   <option value={'08:00 - 10:00'}>08:00 - 10:00</option>
                   <option value={'10:00 - 12:00'}>10:00 - 12:00</option>
                   <option value={'12:00 - 14:00'}>12:00 - 14:00</option>
@@ -177,11 +178,17 @@ export function NewReservation() {
                   value={roomnumber}
                   onChange={handleRoomnumberChange}
                 >
-                  <option value={209}>209</option>
+                  <option value={null}>Select a classroom</option>
                   <option value={201}>201</option>
-                  <option value={312}>312</option>
-                  <option value={164}>164</option>
+                  <option value={203}>203</option>
+                  <option value={205}>205</option>
+                  <option value={207}>207</option>
+                  <option value={209}>209</option>
+                  <option value={211}>211</option>
                   <option value={264}>264</option>
+                  <option value={266}>266</option>
+                  <option value={312}>312</option>
+                  <option value={364}>364</option>
                 </select>
 
                 <p>
