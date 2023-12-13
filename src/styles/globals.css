@@ -18,6 +18,10 @@ html {
   font-family: poppins, sans-serif !important;
 }
 
+.pagewrapper {
+  background-color: var(--cphBlue)!important;
+}
+
 input[type="time"]::-webkit-datetime-edit-ampm-field {
   display: none;
 }
@@ -155,6 +159,9 @@ p {
 }
 .right-bg {
   background-color: white !important;
+}
+.grid-home {
+  max-width: min-content;
 }
 /*
 !=========================================

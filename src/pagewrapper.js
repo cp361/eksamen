@@ -10,7 +10,8 @@ export function PageWrapper({ children }) {
                     initial={{ opacity: 0, y: 25 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 25 }}
-                    transition={{ delay: 0.25 }}
+                    transition={{ delay: 1 }}
+                    className='pagewrapper'
                 >
                     {children}
                 </motion.div>

@@ -19,12 +19,12 @@ export default function Complete() {
           <Image 
           src={sideImg}
           width={94}
-          height={800}
+          height={700}
           />
 
         </GridCol>
 
-        <GridCol span='auto' className='right-bg rc'h={800}>
+        <GridCol span='auto' className='right-bg rc'h={700}>
 
         <ReservationComplete />
 
