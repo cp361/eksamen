@@ -3,7 +3,6 @@
 * {
   flex-wrap: nowrap !important;
   --grid-gutter: 0;
-  /* --col-flex-grow: none!important; */
 }
 
 :root {
@@ -14,12 +13,12 @@
   --textColor2: #676767;
 }
 
-html {
+html, body {
   font-family: poppins, sans-serif !important;
 }
 
 .pagewrapper {
-  background-color: var(--cphBlue)!important;
+  background-color: var(--cphBlue) !important;
 }
 
 input[type="time"]::-webkit-datetime-edit-ampm-field {
@@ -43,7 +42,6 @@ p {
 
 .bg {
   background-color: var(--cphBlue);
-  /* height: 100vh; */
   display: grid;
 }
 .bg-second {
@@ -129,10 +127,6 @@ p {
   transition: 0.2s ease;
 }
 
-/*! Farve til remember me, når den er krydset af  */
-.m-bf2d988c {
-  --checkbox-color: var(--cphYellow) !important;
-}
 
 .AuthenticationTitle_title__PxqeA {
   font-family: roboto, sans-serif !important;
@@ -148,155 +142,12 @@ p {
 !=========================================
 !=========================================
 */
-.__m__-Rdmum {
-  --col-flex-grow: 0 !important;
-}
-.__m__-r61 {
-  --col-flex-grow: 0 !important;
-}
-.__m__-r37 {
-  --col-flex-grow: 0 !important;
-}
 .right-bg {
   background-color: white;
 }
 .m-7485cace[data-fluid] {
-  --container-size: 94.2dvw!important;
+  --container-size: 94.2dvw !important;
 }
-.grid-home {
-}
-/*
-!=========================================
-!=========================================
-!=========================================
-!=========== Available Times =============
-!=========================================
-!=========================================
-!=========================================
-*/
-.__m__-r21 {
-  --grid-gutter: none !important;
-}
-.__m__-R6m {
-  --grid-gutter: none !important;
-}
-.__m__-R1bem {
-  --grid-gutter: none !important;
-}
-.booking {
-  height: 100dvh !important;
-}
-.booking h1 {
-  font-size: 3.5rem;
-}
-
-.sidebar {
-  display: flex;
-  justify-content: center;
-  background-image: url("../assets/sidebar-background.png");
-  height: 100dvh;
-}
-.sidebar > * {
-  margin-top: 20px;
-}
-.back-button {
-  margin-inline: 10px;
-}
-
-.booking-flow-icons {
-  display: flex;
-  align-items: center;
-}
-
-.booking-flow {
-  background-color: white;
-}
-.booking-flow-timeline1 {
-  height: 5px;
-  width: 186px;
-  background-color: var(--cphYellow);
-  border-radius: 20px;
-}
-.booking-flow-timeline2 {
-  height: 5px;
-  width: 486px;
-  background-color: var(--cphYellow);
-  border-radius: 20px;
-}
-.booking-flow-timeline3 {
-  height: 5px;
-  width: 486px;
-  background: rgb(251, 176, 64);
-  background: linear-gradient(
-    90deg,
-    rgba(251, 176, 64, 1) 0%,
-    rgba(251, 176, 64, 1) 14%,
-    rgba(156, 156, 156, 1) 30%
-  );
-  border-radius: 20px;
-}
-.booking-flow-timeline4 {
-  height: 5px;
-  width: 186px;
-  background-color: var(--textColor);
-  border-radius: 20px;
-}
-.booking-icons {
-  padding-inline: 10px;
-  color: var(--cphYellow);
-}
-.booking-icons-middle {
-  padding-left: 13px;
-  color: var(--cphYellow);
-}
-.booking-main {
-  padding-left: 10px;
-  display: flex;
-  justify-content: space-between;
-}
-.booking-main h3 {
-  font-size: 1.8rem;
-  font-weight: bold;
-}
-.booking-main label {
-  font-size: 1.2rem;
-  font-weight: 600;
-}
-.booking-main input {
-  border: none;
-  background-color: lightgray;
-  padding: 4px 10px;
-}
-.labels {
-  display: grid;
-  margin-bottom: 15px;
-}
-.new-reservation h1,
-h3,
-h4,
-label {
-  color: var(--textColor2);
-}
-.new-reservation {
-  margin-top: -40px;
-  padding-inline: 30px;
-  padding-bottom: 10px;
-  max-width: 100%;
-}
-.new-reservation p {
-  color: var(--textColor);
-}
-.reservation-info {
-  padding-bottom: 20px;
-}
-.reservation-info-titles {
-  color: var(--textColor2);
-  font-weight: 700;
-}
-.reservation-info-facilities {
-  line-height: 0.3rem;
-}
-
 /*
 !=========================================
 !=========================================
@@ -306,74 +157,10 @@ label {
 !=========================================
 !=========================================
 */
-.cr-container .cr-grid {
-  --grid-gutter: 1 !important;
-}
-
-
-.__m__-r3 {
-  --col-flex-grow: 0 !important;
-}
-.__m__-R3dnm {
-  --col-flex-grow: 0 !important;
-}
-
-.nr-container {
-  width: 100%;
-  padding-top: 40px;
-  padding-bottom: 40px;
-}
-
-.date-title {
-  padding-bottom: 30px;
-  color: var(--textColor2);
-  font-size: 1.5rem !important;
-}
-
-.nr-date-div {
-  padding-left: 60px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-
-.todayDate {
-  display: grid;
-}
-.todayDate :nth-child(2) {
-  margin-bottom: 20px;
-}
-
-.todayDate label {
-  color: var(--textColor2);
-  font-weight: 700;
-  font-size: 0.8rem;
-}
-
-.todayDate input {
-  color: var(--textColor);
-  border: 1px solid lightgray;
-}
-
-.nr-datepicker {
-  padding-top: 20px;
-}
-
 .choose-attendants input {
-  width: 30px;
+  width: 35px;
 }
 
-.nr-numberinput {
-  padding-top: 5px;
-}
-
-.nr-numberinput-div {
-  margin: auto !important;
-}
-
-.nr-flex {
-  border: solid var(--textColor);
-  padding: 10%;
-}
 
 #roomnumbers {
   margin-bottom: 10px;
@@ -482,8 +269,6 @@ label {
   color: var(--textColor);
 }
 
-
-
 .upcoming-reservations {
   margin-block: 20px;
   display: grid;
@@ -512,27 +297,8 @@ label {
 !=========================================
 !=========================================
 */
-.__m__-r21 {
-  --col-flex-basis: none !important;
-  height: 90dvh !important;
-}
-.__m__-ru {
-  --col-flex-grow: 0 !important;
-}
-.__m__-Rrem {
-  --col-flex-grow: 0 !important;
-}
 .rc-title {
   color: var(--textColor2);
-}
-.rc-info-title {
-  color: var(--textColor2);
-  font-size: 1.3rem !important;
-}
-.rc-info-text {
-  color: var(--textColor) !important;
-  font-size: 0.9rem !important;
-  text-align: center;
 }
 .rc-info-receipt {
   color: var(--textColor) !important;
@@ -540,30 +306,13 @@ label {
   font-size: 0.9rem !important;
   text-align: center;
 }
-.rc-info-number {
-  color: var(--textColor) !important;
-}
 .rc-paper-div {
   display: flex;
   justify-content: center;
 }
-.rc-facilities-elements {
-  display: flex;
-  justify-content: space-between;
-
-  margin-bottom: 20px;
-}
-
-.rc-facilities-item {
-  text-align: center;
-}
 
 .rc-paper {
   border: 1px solid var(--textColor) !important;
-}
-.rc-img {
-  height: 200px;
-  width: 200px;
 }
 
 .rc-button {
@@ -571,8 +320,6 @@ label {
   justify-content: center;
   margin-top: 20px;
 }
-
-
 
 .reservation-complete-grid {
   display: grid;
@@ -601,6 +348,55 @@ label {
   font-size: 1rem;
 }
 
+.booking-flow-icons {
+  display: flex;
+  align-items: center;
+}
+.booking-flow-timeline1 {
+  height: 5px;
+  width: 186px;
+  background-color: var(--cphYellow);
+  border-radius: 20px;
+}
+.booking-flow-timeline2 {
+  height: 5px;
+  width: 486px;
+  background-color: var(--cphYellow);
+  border-radius: 20px;
+}
+.booking-flow-timeline3 {
+  height: 5px;
+  width: 486px;
+  background: rgb(251, 176, 64);
+  background: linear-gradient(
+    90deg,
+    rgba(251, 176, 64, 1) 0%,
+    rgba(251, 176, 64, 1) 14%,
+    rgba(156, 156, 156, 1) 30%
+  );
+  border-radius: 20px;
+}
+.booking-flow-timeline4 {
+  height: 5px;
+  width: 186px;
+  background-color: var(--textColor);
+  border-radius: 20px;
+}
+.booking-icons {
+  padding-inline: 10px;
+  color: var(--cphYellow);
+}
+.booking-icons-middle {
+  padding-left: 13px;
+  color: var(--cphYellow);
+}
+.new-reservation h1,
+h3,
+h4,
+label {
+  color: var(--textColor2);
+}
+
 /*
 !=========================================
 !=========================================
@@ -626,14 +422,14 @@ label {
 }
 
 .profile-text {
-  line-height: .4;
+  line-height: 0.4;
   padding-left: 20px;
   padding-top: 10px;
   color: white;
 }
 .profile-text p {
   font-weight: 500;
-  color: white
+  color: white;
 }
 
 .profile-avatar {
@@ -715,10 +511,10 @@ label {
 .classroom-card2 {
   padding: 10px;
   text-align: center;
+  align-items: center;
 
   display: grid;
   grid-template-columns: repeat(2, 2fr);
-
 }
 .classroom-card-info {
   display: block;
