@@ -524,6 +524,9 @@ label {
 .classroom-card-info p:first-of-type {
   padding-top: 10px;
 }
+.classroom-icons {
+  margin-block: 10px
+}
 .classroom-icons :nth-child(2) {
   margin-inline: 10px;
 }
