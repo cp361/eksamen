@@ -651,10 +651,14 @@ label {
 }
 
 .profile-text {
-  line-height: 10px;
+  line-height: .4;
   padding-left: 20px;
   padding-top: 10px;
   color: white;
+}
+.profile-text p {
+  font-weight: 500;
+  color: white
 }
 
 .profile-avatar {
