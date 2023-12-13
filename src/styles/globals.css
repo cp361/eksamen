@@ -3,7 +3,6 @@
 * {
   flex-wrap: nowrap !important;
   --grid-gutter: 0;
-  --col-flew-grow: 0!important;
 }
 
 :root {
@@ -143,14 +142,13 @@ p {
 !=========================================
 !=========================================
 */
-.__m__-Rdmum, .__m__-r25, .__m__-r61, .__m__-r9t, .__m__-r9t {
-  --col-flex-grow: 0!important;
+.grid-home {
+  display: grid;
+  grid-template-columns: 1fr 20fr;
 }
-/* .__m__-r25 {
-  --col-flex-grow: 1;
-  --col-flex-basis: 0rem;
-  --col-max-width: unset;
-} */
+.sidebar-image {
+  min-height: 100%;
+}
 
 .right-bg {
   background-color: white;
