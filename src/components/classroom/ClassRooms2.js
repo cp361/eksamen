@@ -4,6 +4,7 @@ import classroomimg from '../../assets/classroom-img.png'
 import Image from 'next/image'
 import { Button } from '@mantine/core'
 import { FaChalkboardTeacher, FaPlug, FaTv } from 'react-icons/fa'
+import { cancelAlert } from '../alert/CancelAlert'
 
 const ClassRoomCard2 = ({ reservation, classroom }) => {
   return (
@@ -16,6 +17,8 @@ const ClassRoomCard2 = ({ reservation, classroom }) => {
         />
 
       <h3 className='classroom-number2'> {reservation.roomnumber} </h3>
+      <Button className='classroom-button' size='sm' color='var(--cphYellow)' onClick={cancelAlert}>Cancel</Button>
+
       </div>
       <div className='classroom-card-info'>
         <div className='classroom-icons'>
