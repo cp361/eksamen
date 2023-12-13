@@ -15,11 +15,11 @@ export default function newReservation() {
 
       <Grid className='grid-home'>
 
-        <GridCol span='auto' w={94} h={1300}>
+        <GridCol span='auto' w={94} h={1000}>
 
           <Image 
           src={sideImg}
-          height={1300}
+          height={1000}
           width={94}
           />
 

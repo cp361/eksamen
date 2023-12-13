@@ -1,37 +1,24 @@
 import {
-  TextInput,
-  PasswordInput,
-  Checkbox,
   Anchor,
-  Paper,
   Title,
   Text,
   Container,
-  Group,
-  Button,
   Center,
-  Loader,
 } from "@mantine/core";
 
 import classes from "../../styles/AuthenticationTitle.module.css";
 import { supabase } from "../../pages/lib/helper/supabaseClient.js";
-import React, { useEffect, useState } from "react";
-import { createClient } from "@supabase/supabase-js";
-import { useFavicon } from "@mantine/hooks";
+import React, { useState } from "react";
 import { useRouter } from "next/router";
-//Loading funktion//
 
 export function AuthenticationForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const router = useRouter();
-  //Loading funktion//
-  // const [setLoading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // setLoading(true);
       const { user, session, error } = await supabase.auth.signInWithPassword({
         email,
         password,
@@ -39,11 +26,8 @@ export function AuthenticationForm() {
       if (error) throw error;
       router.replace("/home");
     } catch (error) {
-      alert(error.message);
+      alert('You have entered the wrong email or password.');
     }
-    // finally {
-    //   setLoading(false);
-    // }
   };
 
   return (
@@ -72,10 +56,15 @@ export function AuthenticationForm() {
             size="sm"
             ta="center"
             mt={5}
-            onClick={() => router.push("/signup")}
           >
             Don't have an account?
-            <Anchor size="sm" component="button" ml={5}>
+            <Anchor
+              size="sm"
+              component="button"
+              onClick={() => router.push("/signup")}
+              ml={5}
+            >
+
               Create Account
             </Anchor>
           </Text>

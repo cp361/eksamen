@@ -158,10 +158,12 @@ p {
   --col-flex-grow: 0 !important;
 }
 .right-bg {
-  background-color: white !important;
+  background-color: white;
+}
+.m-7485cace[data-fluid] {
+  --container-size: 94.2dvw!important;
 }
 .grid-home {
-  max-width: min-content;
 }
 /*
 !=========================================
@@ -307,6 +309,7 @@ label {
 .cr-container .cr-grid {
   --grid-gutter: 1 !important;
 }
+
 
 .__m__-r3 {
   --col-flex-grow: 0 !important;
@@ -484,10 +487,9 @@ label {
 .upcoming-reservations {
   margin-block: 20px;
   display: grid;
-  width: 100%;
+  width: 99%;
   grid-template-columns: repeat(1000, 2fr);
   overflow-x: auto;
-  width: fit-content;
 }
 
 .upcoming-reservations-title {
@@ -570,34 +572,7 @@ label {
   margin-top: 20px;
 }
 
-.angry-grid {
-  display: grid;
 
-  grid-template-rows: 1fr;
-  grid-template-columns: 1fr 1fr;
-
-  gap: 10px;
-}
-
-#item-0 {
-  grid-row-start: 1;
-  grid-column-start: 1;
-
-  grid-row-end: 2;
-  grid-column-end: 3;
-}
-.item-0-text {
-  margin-bottom: 10px !important;
-}
-#item-2 {
-  margin: auto;
-
-  grid-row-start: 1;
-  grid-column-start: 2;
-
-  grid-row-end: 2;
-  grid-column-end: 3;
-}
 
 .reservation-complete-grid {
   display: grid;

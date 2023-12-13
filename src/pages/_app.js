@@ -4,7 +4,6 @@ import { MantineProvider } from "@mantine/core";
 
 import { MyContext } from "@/context/my-context";
 import { useEffect, useState } from "react";
-import { DateProvider } from "@/context/date-context";
 import { supabase } from "./lib/helper/supabaseClient";
 
 
@@ -49,9 +48,7 @@ export default function App({ Component, pageProps }) {
   return (
     <MyContext.Provider value={contextValue}>
       <MantineProvider>
-        <DateProvider>
           <Component {...pageProps} />
-        </DateProvider>
       </MantineProvider>
     </MyContext.Provider>
   );
