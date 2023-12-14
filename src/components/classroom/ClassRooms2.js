@@ -5,7 +5,6 @@ import Image from 'next/image'
 import { Button } from '@mantine/core'
 import { FaChalkboardTeacher, FaPlug, FaTv } from 'react-icons/fa'
 import { cancelAlert } from '../alert/CancelAlert'
-import { supabase2 } from '@/pages/lib/helper/supabaseClient2'
 
 const ClassRoomCard2 = ({ reservation, classroom }) => {
 
