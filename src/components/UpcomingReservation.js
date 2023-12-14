@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { Container, Button, Title, Grid, GridCol } from "@mantine/core"
-import { cancelAlert } from "./alert/CancelAlert"
-import ReservationBox from "./ContactBox"
+import ReservationBox from "./ReservationBox"
 
 export function UpcomingReservation() {
   const [reservation, setReservation] = useState([])
