@@ -9,22 +9,35 @@ import SignUpForm from "@/components/auth/SignUp"
 import { PageWrapper } from "@/pagewrapper"
 
 const Signup = () => {
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
-  const router = useRouter()
+  //! Bruger useState-hook til at oprette lokale statevariabler for email og password
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
+  //! Henter router-objektet fra Next.js til håndtering af navigation
+  const router = useRouter();
+
+  //! Opretter en handleSubmit-funktion, der håndterer formularindsendelse
   const handleSubmit = async (e) => {
-    e.preventDefault()
+    
+    //! Forhindrer standardformularindsendelse
+    e.preventDefault();
     try {
+
+      //! Forsøger at oprette en ny bruger ved hjælp af Supabase-authentication
       const { user, session, error } = await supabase.auth.signUp({
         email,
         password,
-      })
-      if (error) throw error
-      router.push("/")
-      console.log(email)
+      });
+      
+      //! Håndterer eventuelle fejl under oprettelsen af brugeren
+      if (error) throw error;
+
+      //! Hvis oprettelsen er vellykket, naviger til startsiden
+      router.push("/");
+
     } catch (error) {
-      alert(error.message)
+      //! Håndterer og viser fejlmeddelelser ved oprettelse af brugeren
+      alert(error.message);
     }
   }
   return (

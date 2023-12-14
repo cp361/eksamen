@@ -12,27 +12,44 @@ import React, { useState } from "react";
 import { useRouter } from "next/router";
 
 export function AuthenticationForm() {
+  //! Bruger useState-hook til at oprette lokale statevariabler for email og password
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  //! Henter router-objektet fra Next.js til håndtering af navigation
   const router = useRouter();
 
+  //! Opretter en handleSubmit-funktion, der håndterer formularindsendelse
   const handleSubmit = async (e) => {
+    
+    //! Forhindrer standardformularindsendelse
     e.preventDefault();
+
     try {
+      //! Forsøger at logge ind ved hjælp af Supabase-authentication
       const { user, session, error } = await supabase.auth.signInWithPassword({
         email,
         password,
       });
+      
+      //! Håndterer eventuelle fejl under login-processen
       if (error) throw error;
+
+      //! Hvis login er vellykket, naviger til hjemmesiden
       router.replace("/home");
+
     } catch (error) {
+      //! Viser en fejlmeddelelse, hvis der opstår en fejl under login
       alert('You have entered the wrong email or password.');
     }
   };
 
+  //! Returnerer JSX med Mantine Container, logo, tekst og loginformular
   return (
     <Container h={556.8} w={505.08} pt={30} className="form-bg">
+
       <Center>
+        {/* Viser et enkelt logo */}
         <div className="logo">
           <span className="logo-left"></span>
           <span className="logo-right"></span>
@@ -47,7 +64,9 @@ export function AuthenticationForm() {
       </p>
 
       <div>
+
         <div>
+          {/* Velkomsttekst og link til at oprette en konto */}
           <Title ta="center" className={classes.title}>
             Welcome Back!
           </Title>
@@ -64,13 +83,14 @@ export function AuthenticationForm() {
               onClick={() => router.push("/signup")}
               ml={5}
             >
-
               Create Account
             </Anchor>
           </Text>
         </div>
 
+
         <div>
+          {/* Formular til login med e-mail og adgangskode */}
           <form onSubmit={handleSubmit} className="form">
             <label>Email</label>
             <input

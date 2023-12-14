@@ -544,8 +544,9 @@ label {
   grid-template-columns: repeat(2, 2fr);
   overflow-x: hidden;
   width: fit-content;
-  height: 315px;
+  height: 325px;
   justify-content: center;
+  margin-inline: auto;
 }
 
 .classroom-card-img {
